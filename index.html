@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11 Wǒ huì shuō yìdiǎnr Hànyǔ - Teaching Notes</title>
+    <!-- IMPORT STANDARD SCHOOLBOOK PINYIN FONT (Andika) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* ELEGANT SAPPHIRE & OCEAN BLUE PALETTE */
+            --bg-color: #F8FAFC;         
+            --primary-color: #1E3A8A;    /* Deep Sapphire Blue */
+            --primary-hover: #1D4ED8;    /* Ocean Blue */
+            --accent-color: #3B82F6;     /* Bright Accent Blue */
+            --accent-light: #DBEAFE;
+            --card-bg: #FFFFFF;          
+            --border-color: #BFDBFE;     
+            --text-main: #0F172A;        
+            --text-sub: #475569;         
+            --answer-purple: #7C3AED;      
+            --correct-blue: #0284C7;    
+            --error-red: #E11D48;        
+            --light-blue: #F0F9FF;
+            
+            /* STANDARD PINYIN FONT STACK */
+            --pinyin-font: 'Andika', 'Century Gothic', 'Comic Sans MS', sans-serif;
+        }
+
+        /* GLOBAL FONT SIZE FOR CLASSROOM PROJECTORS */
+        html { font-size: 20px; }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body { 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            display: flex; 
+            flex-direction: column;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* TOP NAVIGATION BAR */
+        .top-navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .nav-header {
+            padding: 0.8rem 1.8rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+        
+        .nav-header h1 { font-size: 1.35rem; margin: 0; letter-spacing: 0.5px; font-family: var(--pinyin-font); font-weight: bold;}
+        .nav-header p { font-size: 0.95rem; color: #93C5FD; margin: 0; font-weight: bold; }
+        
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            padding: 0.6rem 0.8rem;
+        }
+        
+        .nav-tabs button {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #E0E7FF;
+            padding: 0.45rem 0.8rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        
+        .nav-tabs button:hover {
+            background-color: rgba(255,255,255,0.25);
+            color: white;
+        }
+        
+        .nav-tabs button.active {
+            background-color: #FFFFFF;
+            color: var(--primary-color);
+            border-color: #FFFFFF;
+            font-weight: bold;
+        }
+
+        /* FLEX BREAK TO FORCE BREAK ONWARDS TO NEXT ROW */
+        .tab-break-line {
+            flex-basis: 100%;
+            height: 0;
+        }
+
+        /* MAIN SLIDE STAGE */
+        .main-content { 
+            margin: 0 auto; 
+            flex-grow: 1; 
+            padding: 2rem 2.5rem; 
+            width: 100%;
+            max-width: 1350px; 
+        }
+        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .content-header { margin-bottom: 1.8rem; padding-bottom: 0.6rem; border-bottom: 3px solid var(--border-color); }
+        .content-header h2 { color: var(--primary-color); font-size: 2.1rem; }
+
+        /* CARDS & LARGE TEXT */
+        .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 4px 10px rgba(30, 58, 138, 0.05); margin-bottom: 1.8rem; padding: 2rem; width: 100%; }
+        .card-title { font-size: 1.4rem; font-weight: bold; color: var(--primary-color); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px dashed var(--border-color); display: flex; align-items: center; justify-content: space-between; }
+        .page-badge { background-color: #DBEAFE; color: #1E40AF; font-size: 0.85rem; padding: 4px 12px; border-radius: 12px; font-weight: bold; }
+        .translation { display: inline; font-size: 1.05rem; color: var(--text-sub); font-weight: normal; margin-left: 8px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+
+        /* TABLES & HIGHLIGHTS WITH STANDARD PINYIN FONT */
+        .vocab-table { width: 100%; border-collapse: collapse; margin-top: 0.8rem; font-size: 1.1rem; }
+        .vocab-table th, .vocab-table td { text-align: left; padding: 1rem 0.8rem; border-bottom: 1px solid var(--border-color); vertical-align: middle; }
+        .vocab-table th { background-color: var(--light-blue); color: var(--primary-color); font-size: 0.95rem; text-transform: uppercase; border-bottom: 2px solid var(--border-color); }
+        .vocab-num { font-weight: bold; color: var(--accent-color); width: 8%; }
+        .vocab-table td.vocab-pinyin-cell { width: 22%; font-weight: bold; color: var(--primary-color); font-size: 1.25rem; font-family: var(--pinyin-font) !important; }
+        
+        .vocab-pinyin, .vocab-collo, .vocab-sent, .dlg-py, .qa-q, .qa-a, .correct-example, .error-example, .dlg-turn, .dlg-turn-ans {
+            font-family: var(--pinyin-font) !important;
+        }
+
+        .vocab-pinyin { font-weight: bold; color: var(--primary-color); font-size: 1.15rem; }
+        .vocab-collo { color: var(--text-sub); margin-bottom: 4px; font-size: 1.1rem; }
+        .collo-target { font-weight: bold; color: var(--primary-color); }
+        .vocab-sent { color: var(--primary-color); font-weight: 500; font-size: 1.15rem; }
+        .vocab-note { color: var(--accent-color); font-size: 1rem; font-weight: 500; margin-top: 6px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+
+        /* NEW VOCAB HIGHLIGHT IN TEXTS */
+        .hl { font-weight: bold; color: #1E40AF; background-color: #DBEAFE; padding: 2px 6px; border-radius: 4px; border-bottom: 2px solid #93C5FD; }
+
+        /* RULES & VISUAL GRAMMAR SLOTS */
+        .rule-box { background-color: var(--light-blue); border: 1.5px solid var(--border-color); border-radius: 10px; padding: 1.4rem; margin-top: 1rem; font-size: 1.1rem; width: 100%; }
+        .grammar-hl { color: var(--primary-color); font-weight: bold; background-color: #DBEAFE; padding: 2px 6px; border-radius: 4px; }
+        .correct-example { color: var(--correct-blue); font-weight: bold; font-size: 1.2rem; }
+        .error-example { color: var(--error-red); font-weight: bold; text-decoration: line-through; font-size: 1.2rem; }
+        
+        /* VISUAL SENTENCE BUILDER SLOTS */
+        .builder-wrapper {
+            margin: 12px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .builder-wrapper:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .sentence-builder {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            margin: 6px 0;
+            font-family: var(--pinyin-font);
+            width: 100%;
+        }
+        .slot {
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.15rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+        .slot-subj { background-color: #E2E8F0; color: #1E293B; border: 1.5px solid #CBD5E1; }
+        .slot-time { background-color: #F3E8FF; color: #6B21A8; border: 1.5px solid #D8B4FE; }
+        .slot-prep { background-color: #FEF3C7; color: #92400E; border: 1.5px solid #F59E0B; }
+        .slot-verb { background-color: #DBEAFE; color: #1E40AF; border: 1.5px solid #93C5FD; }
+        .slot-obj  { background-color: #E0F2FE; color: #0369A1; border: 1.5px solid #7DD3FC; }
+        .slot-label { font-size: 0.72rem; display: block; font-weight: normal; color: #64748B; margin-bottom: 2px; text-transform: uppercase; }
+
+        /* INTERACTIVE CLICK-TO-REVEAL DIALOGUES & KEY SENTENCES */
+        .click-hint { background-color: #DBEAFE; color: #1E40AF; padding: 0.8rem 1.2rem; border-radius: 8px; margin-bottom: 1.5rem; font-weight: bold; display: flex; align-items: center; gap: 8px; font-size: 1.1rem;}
+        
+        .interactive-dlg {
+            background-color: #FFFFFF;
+            border-left: 6px solid var(--accent-color);
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            width: 100%;
+        }
+        
+        .interactive-dlg:hover {
+            background-color: var(--light-blue);
+            transform: translateX(4px);
+        }
+        
+        .dlg-eng {
+            font-size: 1.25rem;
+            color: #0F172A;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .dlg-py {
+            display: none; 
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed #93C5FD;
+            line-height: 1.7;
+        }
+        
+        .interactive-dlg.revealed .dlg-py { display: block; animation: fadeIn 0.3s ease-in-out; }
+        .interactive-dlg.revealed .dlg-eng { color: #94A3B8; font-size: 1.05rem; font-weight: normal; }
+        
+        /* INTERACTIVE KEY SENTENCES */
+        .key-sent-card {
+            background-color: #FFFFFF;
+            border-left: 6px solid var(--primary-color);
+            padding: 1rem 1.4rem;
+            margin-bottom: 0.8rem;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            width: 100%;
+        }
+        .key-sent-card:hover {
+            background-color: var(--light-blue);
+            transform: translateX(4px);
+        }
+        .key-sent-py {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-family: var(--pinyin-font);
+        }
+        .key-sent-eng {
+            display: none;
+            margin-top: 0.6rem;
+            padding-top: 0.6rem;
+            border-top: 1px dashed #93C5FD;
+            font-size: 1.1rem;
+            color: #334155;
+        }
+        .key-sent-card.revealed .key-sent-eng { display: block; animation: fadeIn 0.3s ease-in-out; }
+
+        .speaker { font-weight: bold; color: var(--primary-color); }
+        .dlg-turn { padding: 0.8rem 1.2rem; margin-bottom: 0.6rem; background-color: #F8FAFC; border-left: 5px solid var(--primary-color); border-radius: 0 6px 6px 0; font-size: 1.15rem; width: 100%; }
+        
+        .line-guide-box { background-color: #DBEAFE; border-left: 8px solid var(--accent-color); padding: 1.4rem 1.8rem; border-radius: 10px; margin-top: 1.8rem; margin-bottom: 1rem; width: 100%; }
+        .line-guide-title { font-weight: bold; color: #1E40AF; font-size: 1.25rem; margin-bottom: 8px; }
+        .line-guide-text { color: #1E3A8A; font-size: 1.1rem; line-height: 1.6; }
+
+        .break-card { background-color: var(--primary-color); color: white; text-align: center; padding: 4rem 2rem; border-radius: 16px; border-top: 8px solid var(--accent-color); margin-top:2rem; width: 100%;}
+        .break-card h2 { font-size: 3rem; margin-bottom: 1.2rem; }
+        .break-card p { font-size: 1.4rem; color: #DBEAFE; }
+
+        @media (max-width: 850px) {
+            .nav-header { flex-direction: column; align-items: flex-start; gap: 8px; padding: 1rem; }
+            .main-content { padding: 1.5rem; }
+            .sentence-builder { flex-direction: column; align-items: stretch; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP NAVIGATION BAR -->
+    <header class="top-navbar">
+        <div class="nav-header">
+            <h1>Lesson 11 Wǒ huì shuō yìdiǎnr Hànyǔ</h1>
+            <p>Teaching Notes</p>
+        </div>
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="openTab(event, 'nav-0')">📌 Agenda</button>
+            <button class="tab-btn" onclick="openTab(event, 'nav-1')">⏰ Time & Age</button>
+            <button class="tab-btn" onclick="openTab(event, 'nav-2')">🗣️ Expressing Ability</button>
+            <button class="tab-btn" onclick="openTab(event, 'nav-3')">💬 Text 1</button>
+            
+            <!-- LINE BREAK TO PUSH BREAK ONWARDS TO NEXT ROW -->
+            <div class="tab-break-line"></div>
+            
+            <button class="tab-btn" onclick="openTab(event, 'tab-break')">☕ Break</button>
+            <button class="tab-btn" onclick="openTab(event, 'nav-5')">📅 Daily Routine</button>
+            <button class="tab-btn" onclick="openTab(event, 'nav-6')">✋ Permission & Double Objects</button>
+            <button class="tab-btn" onclick="openTab(event, 'nav-7')">💬 Text 2</button>
+            <button class="tab-btn" onclick="openTab(event, 'nav-8')">📝 Wrap-up & Homework</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+
+        <!-- AGENDA & OVERVIEW -->
+        <section id="nav-0" class="tab-content active">
+            <div class="content-header">
+                <h2>Lesson 11: Wǒ huì shuō yìdiǎnr Hànyǔ</h2>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">Course Roadmap & Textbook Coverage</div>
+                <div class="dlg-turn"><strong>Main Topics:</strong> Asking the time, Expressing one's ability, Daily routine, Expressing permission or prohibition.</div>
+                <div class="dlg-turn"><strong>Textbook Coverage:</strong> New Practical Chinese Reader 1, Lesson 11 (Pages 173 to 192)</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Lesson Sections</div>
+                <div class="dlg-turn"><strong>1. Text 1:</strong> Asking the time & Expressing Ability (Pg 174–177)</div>
+                <div class="dlg-turn"><strong>2. Text 2:</strong> Permission & Prohibition (Pg 177–180)</div>
+                <div class="dlg-turn"><strong>3. Wrap-up:</strong> Key Sentence Review & Homework Assignment</div>
+            </div>
+
+            <div class="line-guide-box">
+                <div class="line-guide-title">✏️ Important Note for Students (Textbook Lines Reference)</div>
+                <div class="line-guide-text">
+                    Please open your textbook and write down the line numbers for easy tracking during class:
+                    <br>• <strong>Text 1 (Pages 174–175):</strong> Mark <strong>Lines 1–19</strong> in your textbook.
+                    <br>• <strong>Text 2 (Pages 177–178):</strong> Mark <strong>Lines 1–7</strong> in your textbook.
+                </div>
+            </div>
+        </section>
+
+        <!-- TIME & AGE (Text 1 Prep) -->
+        <section id="nav-1" class="tab-content">
+            <div class="content-header">
+                <h2>Time & Age (Pg 174–176)</h2>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <span>Vocabulary: Time & People</span>
+                    <span class="page-badge">Pg 176</span>
+                </div>
+                <table class="vocab-table">
+                    <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation & Example Sentence</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="vocab-num">#4</td><td class="vocab-pinyin-cell">diǎn (zhōng) 🕒</td><td>o'clock</td>
+                            <td><div class="vocab-collo">Collocation: liǎng <span class="collo-target">diǎn</span> / bā <span class="collo-target">diǎnzhōng</span></div><div class="vocab-sent">Sentence: Qǐngwèn xiànzài jǐ diǎn?</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#17</td><td class="vocab-pinyin-cell">fēn (zhōng) ⏱️</td><td>minute</td>
+                            <td><div class="vocab-collo">Collocation: bā diǎn wǔ <span class="collo-target">fēn</span> / shí <span class="collo-target">fēnzhōng</span></div><div class="vocab-sent">Sentence: Nín hái yǒu wǔ fēnzhōng.</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#6</td><td class="vocab-pinyin-cell">kè ⏳</td><td>quarter (15 mins)</td>
+                            <td><div class="vocab-collo">Collocation: yí <span class="collo-target">kè</span> zhōng / sān <span class="collo-target">kè</span></div><div class="vocab-sent">Sentence: Chà yí kè bā diǎn.</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#5</td><td class="vocab-pinyin-cell">chà 📉</td><td>to be short of, lack</td>
+                            <td><div class="vocab-collo">Collocation: <span class="collo-target">chà</span> yí kè / <span class="collo-target">chà</span> wǔ fēn</div><div class="vocab-sent">Sentence: Xiànzài chà wǔ fēn bā diǎn.</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#15</td><td class="vocab-pinyin-cell">suìshu 🎂</td><td>years (of age)</td>
+                            <td><div class="vocab-collo">Collocation: duō dà <span class="collo-target">suìshu</span></div><div class="vocab-sent">Sentence: Nín jīnnián duō dà suìshu?</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#14</td><td class="vocab-pinyin-cell">sūnnür 👧</td><td>granddaughter (son's side)</td>
+                            <td><div class="vocab-collo">Collocation: wǒ <span class="collo-target">sūnnür</span></div><div class="vocab-sent">Sentence: Tā shì wǒ sūnnür.</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- VISUAL GRAMMAR: TELLING TIME -->
+            <div class="card">
+                <div class="card-title">Grammar: Clock Time vs Duration</div>
+                
+                <div class="rule-box">
+                    <strong style="font-size: 1.15rem; color: var(--primary-color);">1. When to use "diǎnzhōng" and "fēnzhōng":</strong>
+                    <div style="display: flex; gap: 15px; margin-top: 15px; flex-wrap: wrap; width: 100%;">
+                        <div style="flex: 1; min-width: 250px; background: white; padding: 12px 16px; border-radius: 8px; border-left: 5px solid var(--correct-blue);">
+                            <strong style="color: var(--correct-blue); font-size: 1.1rem;">diǎn / diǎnzhōng (Clock Time)</strong>
+                            <br><span style="font-size: 0.95rem; color: var(--text-sub); display: block; margin-bottom: 6px;">"diǎnzhōng" is exclusive to FULL hours. NEVER used with minutes.</span>
+                            <span class="vocab-pinyin">liǎng diǎn(zhōng)</span> <span class="translation">(2:00)</span>
+                            <div class="error-example" style="margin-top: 6px; font-size: 1rem;">✘ liǎng diǎnzhōng shí fēn</div>
+                        </div>
+                        <div style="flex: 1; min-width: 250px; background: white; padding: 12px 16px; border-radius: 8px; border-left: 5px solid var(--answer-purple);">
+                            <strong style="color: var(--answer-purple); font-size: 1.1rem;">fēn / fēnzhōng (Duration)</strong>
+                            <br><span style="font-size: 0.95rem; color: var(--text-sub); display: block; margin-bottom: 6px;">"fēnzhōng" is for a period of time. Don't use it to tell the exact time on a clock.</span>
+                            <span class="vocab-pinyin">hái yǒu shí fēnzhōng</span> <span class="translation">(still have 10 minutes)</span>
+                            <div class="error-example" style="margin-top: 6px; font-size: 1rem;">✘ liǎng diǎn shí fēnzhōng</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rule-box" style="margin-top: 1rem;">
+                    <strong style="font-size: 1.15rem; color: var(--primary-color);">2. Reading the Clock (Less than 10 mins & Quarters):</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px; line-height: 2;" class="vocab-pinyin">
+                        <li><strong>2:05</strong> ➔ liǎng diǎn <span class="grammar-hl" style="color: #0369A1;">líng</span> wǔ fēn <span class="translation">(Less than 10, add 'líng')</span></li>
+                        <li><strong>2:10</strong> ➔ liǎng diǎn shí fēn</li>
+                        <li><strong>2:12</strong> ➔ liǎng diǎn shí'èr (fēn) <span class="translation">(More than 10, 'fēn' may be omitted)</span></li>
+                        <li><strong>2:15</strong> ➔ liǎng diǎn shíwǔ (fēn) <span style="font-family: Arial, sans-serif;">OR</span> liǎng diǎn <span class="grammar-hl">yí kè</span></li>
+                        <li><strong>2:30</strong> ➔ liǎng diǎn sānshí (fēn) <span style="font-family: Arial, sans-serif;">OR</span> liǎng diǎn <span class="grammar-hl">bàn</span></li>
+                        <li><strong>2:45</strong> ➔ liǎng diǎn sìshíwǔ (fēn) <span style="font-family: Arial, sans-serif;">OR</span> <span class="grammar-hl">chà yí kè sān diǎn</span></li>
+                        <li><strong>2:55</strong> ➔ liǎng diǎn wǔshíwǔ (fēn) <span style="font-family: Arial, sans-serif;">OR</span> <span class="grammar-hl">chà wǔ fēn sān diǎn</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- VISUAL GRAMMAR: ASKING AGE -->
+            <div class="card">
+                <div class="card-title">Grammar & Culture: Asking Age Appropriately</div>
+                
+                <div class="rule-box">
+                    <p style="font-size: 1.05rem; margin-bottom: 12px;">In Chinese culture, how you ask someone's age depends entirely on who you are speaking to:</p>
+                    
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 200px; background: white; padding: 12px; border-radius: 8px; border-top: 4px solid #F59E0B;">
+                            <strong style="color: #92400E;">Infants (&lt;1 year)</strong>
+                            <br><span class="vocab-pinyin" style="font-size: 1.1rem; color: #B45309;">Bǎobao jǐ ge yuè le?</span>
+                            <br><span style="font-size: 0.9rem; color: var(--text-sub);">Chinese counts age in months for infants (How many months old?)</span>
+                        </div>
+                        <div style="flex: 1; min-width: 200px; background: white; padding: 12px; border-radius: 8px; border-top: 4px solid var(--correct-blue);">
+                            <strong style="color: var(--correct-blue);">Children (&lt;12 years)</strong>
+                            <br><span class="vocab-pinyin" style="font-size: 1.1rem; color: var(--correct-blue);">Nǐ jīnnián jǐ suì?</span>
+                            <br><span style="font-size: 0.9rem; color: var(--text-sub);">Sounds natural/cute for kids. Weird for adults.</span>
+                        </div>
+                        <div style="flex: 1; min-width: 200px; background: white; padding: 12px; border-radius: 8px; border-top: 4px solid var(--primary-color);">
+                            <strong style="color: var(--primary-color);">Adults (Peers)</strong>
+                            <br><span class="vocab-pinyin" style="font-size: 1.1rem; color: var(--primary-color);">Nǐ jīnnián duō dà?</span>
+                            <br><span style="font-size: 0.9rem; color: var(--text-sub);">Most common & natural. Not too formal/strange.</span>
+                        </div>
+                        <div style="flex: 1; min-width: 200px; background: white; padding: 12px; border-radius: 8px; border-top: 4px solid var(--answer-purple);">
+                            <strong style="color: var(--answer-purple);">Elderly (60+ years)</strong>
+                            <br><span class="vocab-pinyin" style="font-size: 1.1rem; color: var(--answer-purple);">Nín jīnnián duō dà suìshu?</span>
+                            <br><span style="font-size: 0.9rem; color: var(--text-sub);">Extra polite. Shows respect.</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 15px; padding: 10px; background-color: #FEE2E2; border-radius: 8px; border-left: 4px solid var(--error-red);">
+                        <strong style="color: var(--error-red);">⚠️ Warning: Nǐ duōshao suì?</strong>
+                        <p style="font-size: 0.95rem; color: var(--text-main); margin-top: 4px;">Naturally carries a cold, statistical vibe. It sounds like a police officer asking: "State your age." Avoid using this in conversation!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPRESSING ABILITY & ADVERBS -->
+        <section id="nav-2" class="tab-content">
+            <div class="content-header">
+                <h2>Expressing Ability & Actions (Pg 174–176)</h2>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <span>Vocabulary: Actions & Modals</span>
+                    <span class="page-badge">Pg 176</span>
+                </div>
+                <table class="vocab-table">
+                    <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation & Example Sentence</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="vocab-num">#1</td><td class="vocab-pinyin-cell">huì</td><td>can, know how to</td>
+                            <td><div class="vocab-collo">Collocation: <span class="collo-target">huì</span> shuō Hànyǔ / bú <span class="collo-target">huì</span></div><div class="vocab-sent">Sentence: Wǒ huì shuō yìdiǎnr Hànyǔ.</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#9</td><td class="vocab-pinyin-cell">néng</td><td>can, be able to</td>
+                            <td><div class="vocab-collo">Collocation: <span class="collo-target">néng</span> dào / bù <span class="collo-target">néng</span> lái</div><div class="vocab-sent">Sentence: Wǒmen bā diǎn néng dào ma?</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#2</td><td class="vocab-pinyin-cell">(yì)diǎnr</td><td>a little bit</td>
+                            <td>
+                                <div class="vocab-collo">Collocation: huì shuō <span class="collo-target">yìdiǎnr</span> / hē <span class="collo-target">diǎnr</span> jiǔ</div>
+                                <div class="vocab-sent">Sentence: Wǒ yě huì yìdiǎnr.</div>
+                                <div class="vocab-note">💡 Verb + (yì)diǎnr + Object. An indefinite measure word expressing a small amount.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#3</td><td class="vocab-pinyin-cell">sījī 🚕</td><td>driver</td>
+                            <td><div class="vocab-collo">Collocation: chūzūchē <span class="collo-target">sījī</span></div><div class="vocab-sent">Sentence: Sījī huì shuō Yīngyǔ.</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#7</td><td class="vocab-pinyin-cell">huí 🔙</td><td>to return</td>
+                            <td><div class="vocab-collo">Collocation: <span class="collo-target">huí</span> xuéyuàn / <span class="collo-target">huí</span> jiā</div><div class="vocab-sent">Sentence: Xiànzài huí xuéyuàn shàngkè.</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#8</td><td class="vocab-pinyin-cell">shàngkè 🏫</td><td>to go to class</td>
+                            <td><div class="vocab-collo">Collocation: bā diǎn <span class="collo-target">shàngkè</span></div><div class="vocab-sent">Sentence: Nǐmen jǐ diǎn shàngkè?</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#10</td><td class="vocab-pinyin-cell">dào 📍</td><td>to arrive</td>
+                            <td><div class="vocab-collo">Collocation: <span class="collo-target">dào</span> jiā / <span class="collo-target">dào</span> Yǔyán Xuéyuàn</div><div class="vocab-sent">Sentence: Yǔyán Xuéyuàn dào le.</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#11</td><td class="vocab-pinyin-cell">nǎli</td><td>no (modest denial)</td>
+                            <td><div class="vocab-collo">Collocation: <span class="collo-target">nǎli</span>, <span class="collo-target">nǎli</span></div><div class="vocab-sent">Sentence: Nǎli, wǒ de Hànyǔ bú tài hǎo.</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#12</td><td class="vocab-pinyin-cell">jiāo 🧑‍🏫</td><td>to teach</td>
+                            <td><div class="vocab-collo">Collocation: <span class="collo-target">jiāo</span> Yīngyǔ / <span class="collo-target">jiāo</span> wǒ</div><div class="vocab-sent">Sentence: Shéi jiāo nín Yīngyǔ?</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#13</td><td class="vocab-pinyin-cell">Yīngyǔ 🇬🇧</td><td>English</td>
+                            <td><div class="vocab-collo">Collocation: xuéxí <span class="collo-target">Yīngyǔ</span></div><div class="vocab-sent">Sentence: Wǒ bú huì shuō Yīngyǔ.</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#18</td><td class="vocab-pinyin-cell">báibái 👋</td><td>bye-bye</td>
+                            <td><div class="vocab-collo">Collocation: <span class="collo-target">báibái</span></div><div class="vocab-sent">Sentence: Báibái!</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- THE BIG THREE "CAN" -->
+            <div class="card">
+                <div class="card-title">Grammar: The Difference Between kěyǐ, huì, and néng</div>
+                
+                <div class="rule-box" style="padding: 0; overflow: hidden;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th style="background: var(--light-blue); color: var(--primary-color); padding: 12px; border-bottom: 2px solid var(--border-color); width: 33%;">kěyǐ (boleh)</th>
+                                <th style="background: #ECFDF5; color: #047857; padding: 12px; border-bottom: 2px solid #A7F3D0; width: 33%;">huì (pandai)</th>
+                                <th style="background: #F3E8FF; color: #6B21A8; padding: 12px; border-bottom: 2px solid #D8B4FE; width: 33%;">néng (dapat)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 15px; border-right: 1px dashed var(--border-color); vertical-align: top;">
+                                    <strong style="color: var(--primary-color); display: block; margin-bottom: 8px;">Permission / Appropriateness</strong>
+                                    <ul style="margin-left: 15px; font-size: 0.95rem; color: var(--text-sub); line-height: 1.6;">
+                                        <li>Asking or giving permission; allowed.</li>
+                                        <li>When conditions make it suitable.</li>
+                                    </ul>
+                                    <div class="vocab-pinyin" style="margin-top: 10px; font-size: 1rem;">
+                                        • Wǒ kěyǐ qù yóuyǒng ma? <br><span class="translation" style="margin-left:0;">(Can I go swimming?)</span><br><br>
+                                        • Zhèr bù kěyǐ yóuyǒng. <br><span class="translation" style="margin-left:0;">(You can't swim here. Forbidden!)</span>
+                                    </div>
+                                    <div style="margin-top: 10px; font-weight: bold; color: var(--primary-color); text-align: center; background: #DBEAFE; padding: 4px; border-radius: 4px;">Allowed or not</div>
+                                </td>
+                                <td style="padding: 15px; border-right: 1px dashed #A7F3D0; vertical-align: top;">
+                                    <strong style="color: #047857; display: block; margin-bottom: 8px;">Learned Skill / Ability</strong>
+                                    <ul style="margin-left: 15px; font-size: 0.95rem; color: var(--text-sub); line-height: 1.6;">
+                                        <li>Talking about skills you have learned (swimming, languages, etc.).</li>
+                                        <li>No ability because never learned.</li>
+                                    </ul>
+                                    <div class="vocab-pinyin" style="margin-top: 10px; font-size: 1rem; color: #047857;">
+                                        • Wǒ huì yóuyǒng. <br><span class="translation" style="margin-left:0;">(I can swim. I learned it.)</span><br><br>
+                                        • Wǒ bú huì yóuyǒng. <br><span class="translation" style="margin-left:0;">(I can't swim. I never learned it.)</span>
+                                    </div>
+                                    <div style="margin-top: 10px; font-weight: bold; color: #047857; text-align: center; background: #D1FAE5; padding: 4px; border-radius: 4px;">Learned or not</div>
+                                </td>
+                                <td style="padding: 15px; vertical-align: top;">
+                                    <strong style="color: #6B21A8; display: block; margin-bottom: 8px;">Physical / Conditional Ability</strong>
+                                    <ul style="margin-left: 15px; font-size: 0.95rem; color: var(--text-sub); line-height: 1.6;">
+                                        <li>Talking about strength or conditions that allow something.</li>
+                                        <li>When external factors prevent action.</li>
+                                    </ul>
+                                    <div class="vocab-pinyin" style="margin-top: 10px; font-size: 1rem; color: #6B21A8;">
+                                        • Wǒ néng yóu shí gōnglǐ. <br><span class="translation" style="margin-left:0;">(I can swim 10km. I'm strong enough.)</span><br><br>
+                                        • Wǒ bù néng yóuyǒng. <br><span class="translation" style="margin-left:0;">(I can't swim today. I'm sick.)</span>
+                                    </div>
+                                    <div style="margin-top: 10px; font-weight: bold; color: #6B21A8; text-align: center; background: #F3E8FF; padding: 4px; border-radius: 4px;">Physically possible or not</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ADVERBS OF DEGREE -->
+            <div class="card">
+                <div class="card-title">Grammar: Adverbs of Degree (hěn, zhēn, tài...le, bú tài)</div>
+                <div class="rule-box">
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 220px; background: white; padding: 12px; border-radius: 8px; border-top: 4px solid var(--text-sub);">
+                            <strong style="color: var(--text-sub);">bú tài (not very)</strong>
+                            <br><span style="font-size: 0.9rem; color: var(--text-sub);">Objectively describes insufficiency. Weak.</span>
+                            <br><span class="vocab-pinyin" style="font-size: 1rem;">Zhège píngguǒ bú tài dà.</span>
+                        </div>
+                        <div style="flex: 1; min-width: 220px; background: white; padding: 12px; border-radius: 8px; border-top: 4px solid var(--primary-color);">
+                            <strong style="color: var(--primary-color);">hěn (very)</strong>
+                            <br><span style="font-size: 0.9rem; color: var(--text-sub);">States facts/mild emphasis. Grammatically required before adjectives.</span>
+                            <br><span class="vocab-pinyin" style="font-size: 1rem; color: var(--primary-color);">Zhège píngguǒ hěn dà.</span>
+                        </div>
+                        <div style="flex: 1; min-width: 220px; background: white; padding: 12px; border-radius: 8px; border-top: 4px solid #047857;">
+                            <strong style="color: #047857;">zhēn (really)</strong>
+                            <br><span style="font-size: 0.9rem; color: var(--text-sub);">Subjective feelings (direct observation). Shows surprise/liking NOW.</span>
+                            <br><span class="vocab-pinyin" style="font-size: 1rem; color: #047857;">Zhège píngguǒ zhēn dà.</span>
+                        </div>
+                        <div style="flex: 1; min-width: 220px; background: white; padding: 12px; border-radius: 8px; border-top: 4px solid #E11D48;">
+                            <strong style="color: #E11D48;">tài...le (too / extremely)</strong>
+                            <br><span style="font-size: 0.9rem; color: var(--text-sub);">Extremely subjective evaluation. Exaggeration or complaints.</span>
+                            <br><span class="vocab-pinyin" style="font-size: 1rem; color: #E11D48;">Zhège píngguǒ tài dà le.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESPONDING TO COMPLIMENTS -->
+            <div class="card">
+                <div class="card-title">Culture Note: Responding to Compliments</div>
+                <div class="rule-box" style="background-color: var(--light-blue);">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="font-size: 3rem;">🙏</div>
+                        <div>
+                            <strong style="font-size: 1.15rem; color: var(--primary-color);">nǎli (Where? -> Oh, no, not really!)</strong>
+                            <p style="font-size: 1rem; color: var(--text-main); margin-top: 5px;">When used as a response to a compliment, it expresses humility. Using <strong>"nǎli"</strong> or <strong>"shì ma"</strong> (Is that so?) shows politeness and avoids arrogance when receiving praise. This is considered very good manners in Chinese culture.</p>
+                            <p class="vocab-pinyin" style="margin-top: 8px;">A: Nín de Hànyǔ hěn hǎo. <span class="translation">(Your Chinese is very good.)</span></p>
+                            <p class="vocab-pinyin">B: Nǎli, wǒ de Hànyǔ bú tài hǎo. <span class="translation">(Not really, my Chinese is not very good.)</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEXT 1 DIALOGUE -->
+        <section id="nav-3" class="tab-content">
+            <div class="content-header">
+                <h2>Text 1: Asking the Time (Pg 174–175)</h2>
+            </div>
+
+            <div class="click-hint">
+                🖱️ Interactive Mode: Click on the English translation to reveal the Pinyin dialogue!
+            </div>
+
+            <div class="card">
+                <div class="card-title">Text 1: Dialogue Lines 1–19</div>
+                
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">1. (Uncle/Driver, I am going to the Language Institute. May I ask, what time is it now?)</div>
+                    <div class="dlg-py"><span class="speaker">Lín Nà:</span> <span class="hl">Shīfu</span>, wǒ qù Yǔyán Xuéyuàn. Qǐngwèn xiànzài jǐ <span class="hl">diǎn</span>?</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">2. (It is a quarter to eight. You can speak Chinese!)</div>
+                    <div class="dlg-py"><span class="speaker">Sījī:</span> <span class="hl">Chà</span> yí <span class="hl">kè</span> bā <span class="hl">diǎn</span>. Nín <span class="hl">huì</span> shuō Hànyǔ a!</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">3. (I can speak a little Chinese. I am a student, now I am returning to the institute to attend class.)</div>
+                    <div class="dlg-py"><span class="speaker">Lín Nà:</span> Wǒ <span class="hl">huì</span> shuō <span class="hl">yìdiǎnr</span> Hànyǔ. Wǒ shì xuésheng, xiànzài <span class="hl">huí</span> xuéyuàn <span class="hl">shàngkè</span>.</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">4. (What time do you have class?)</div>
+                    <div class="dlg-py"><span class="speaker">Sījī:</span> Nǐmen jǐ <span class="hl">diǎn</span> <span class="hl">shàngkè</span>?</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">5. (Class is at eight o'clock. Uncle/Driver, can we arrive at eight?)</div>
+                    <div class="dlg-py"><span class="speaker">Lín Nà:</span> Bā <span class="hl">diǎn</span> <span class="hl">shàngkè</span>. <span class="hl">Shīfu</span>, wǒmen bā <span class="hl">diǎn</span> <span class="hl">néng</span> <span class="hl">dào</span> ma?</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">6. (We can arrive. Your Chinese is very good.)</div>
+                    <div class="dlg-py"><span class="speaker">Sījī:</span> <span class="hl">Néng</span> <span class="hl">dào</span>. Nín de Hànyǔ hěn hǎo.</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">7. (Not really, my Chinese is not very good. Can you speak English?)</div>
+                    <div class="dlg-py"><span class="speaker">Lín Nà:</span> <span class="hl">Nǎli</span>, wǒ de Hànyǔ bú tài hǎo. Nín <span class="hl">huì bu huì</span> shuō <span class="hl">Yīngyǔ</span>?</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">8. (I cannot speak English. I also like foreign languages, and often study a little English at home.)</div>
+                    <div class="dlg-py"><span class="speaker">Sījī:</span> Wǒ bú <span class="hl">huì</span> shuō <span class="hl">Yīngyǔ</span>. Wǒ yě xǐhuan wàiyǔ, chángcháng zài jiā xué <span class="hl">diǎnr</span> <span class="hl">Yīngyǔ</span>.</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">9. (Who teaches you English?)</div>
+                    <div class="dlg-py"><span class="speaker">Lín Nà:</span> Shéi <span class="hl">jiāo</span> nín <span class="hl">Yīngyǔ</span>?</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">10. (My granddaughter.)</div>
+                    <div class="dlg-py"><span class="speaker">Sījī:</span> Wǒ <span class="hl">sūnnür</span>.</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">11. (Really interesting. How old is she this year?)</div>
+                    <div class="dlg-py"><span class="speaker">Lín Nà:</span> Zhēn yǒu yìsi. Tā jīnnián jǐ suì?</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">12. (Six years old. My age is too big, learning English is not easy.)</div>
+                    <div class="dlg-py"><span class="speaker">Sījī:</span> Liù suì. Wǒ de <span class="hl">suìshu</span> tài dà le, xué <span class="hl">Yīngyǔ</span> bù róngyì.</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">13. (How old are you this year?)</div>
+                    <div class="dlg-py"><span class="speaker">Lín Nà:</span> Nín jīnnián duō dà <span class="hl">suìshu</span>?</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">14. (I am 52 this year. The Language Institute has arrived. Now it is five minutes to eight, you still have five minutes.)</div>
+                    <div class="dlg-py"><span class="speaker">Sījī:</span> Wǒ jīnnián wǔshí'èr. Yǔyán Xuéyuàn <span class="hl">dào</span> le. Xiànzài <span class="hl">chà</span> wǔ <span class="hl">fēn</span> bā <span class="hl">diǎn</span>, nín <span class="hl">hái</span> yǒu wǔ <span class="hl">fēnzhōng</span>.</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">15. (Thank you, here is the money.)</div>
+                    <div class="dlg-py"><span class="speaker">Lín Nà:</span> Xièxie, gěi nín qián.</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">16. (You gave me RM 20, I give you RM 5.40 change, OK?)</div>
+                    <div class="dlg-py"><span class="speaker">Sījī:</span> Nín gěi wǒ èrshí, wǒ zhǎo nín wǔ kuài sì, OK?</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">17. (You can speak English!)</div>
+                    <div class="dlg-py"><span class="speaker">Lín Nà:</span> Nín <span class="hl">huì</span> shuō <span class="hl">Yīngyǔ</span>!</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">18. (I can also speak a little. Bye-bye!)</div>
+                    <div class="dlg-py"><span class="speaker">Sījī:</span> Wǒ yě <span class="hl">huì</span> <span class="hl">yìdiǎnr</span>. <span class="hl">Báibái</span>!</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">19. (Bye-bye!)</div>
+                    <div class="dlg-py"><span class="speaker">Lín Nà:</span> <span class="hl">Báibái</span>!</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MID-CLASS BREAK -->
+        <section id="tab-break" class="tab-content">
+            <div class="content-header">
+                <h2>Mid-Class Break</h2>
+            </div>
+            <div class="break-card">
+                <h2>10 MINUTE BREAK</h2>
+                <p>Up next: Daily Routine, Expressing Permission & Prohibition (Text 2)</p>
+            </div>
+        </section>
+
+        <!-- DAILY ROUTINE (Text 2 Prep) -->
+        <section id="nav-5" class="tab-content">
+            <div class="content-header">
+                <h2>Daily Routine (Pg 177–179)</h2>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <span>Vocabulary: Time & Routine</span>
+                    <span class="page-badge">Pg 178-179</span>
+                </div>
+                <table class="vocab-table">
+                    <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation & Example Sentence</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="vocab-num">#2</td><td class="vocab-pinyin-cell">zuótiān 📅</td><td>yesterday</td>
+                            <td><div class="vocab-collo">Collocation: <span class="collo-target">zuótiān</span> shàngwǔ / <span class="collo-target">zuótiān</span> xiàwǔ</div><div class="vocab-sent">Sentence: Zuótiān shì xīngqīrì.</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#5</td><td class="vocab-pinyin-cell">wǎnshang 🌙</td><td>evening, night</td>
+                            <td><div class="vocab-collo">Collocation: zuótiān <span class="collo-target">wǎnshang</span> / wǔ hào <span class="collo-target">wǎnshang</span></div><div class="vocab-sent">Sentence: Tā wǎnshang shíyī diǎn bàn huí xuéyuàn.</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#6</td><td class="vocab-pinyin-cell">bàn 🌗</td><td>half</td>
+                            <td>
+                                <div class="vocab-collo">Collocation: jiǔ diǎn <span class="collo-target">bàn</span> / <span class="collo-target">bàn</span> nián</div>
+                                <div class="vocab-sent">Sentence: Shíyī diǎn bàn huí xuéyuàn.</div>
+                                <div class="vocab-note">💡 Use for 30 minutes (8:30 = bā diǎn bàn) or half amounts (bàn ge yuè = half a month).</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#9</td><td class="vocab-pinyin-cell">shuìjiào 🛌</td><td>to sleep</td>
+                            <td><div class="vocab-collo">Collocation: shíyī diǎn <span class="collo-target">shuìjiào</span></div><div class="vocab-sent">Sentence: Liǎng diǎnzhōng shuìjiào.</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#10</td><td class="vocab-pinyin-cell">qǐchuáng 🛏️</td><td>to get up</td>
+                            <td><div class="vocab-collo">Collocation: liù diǎn <span class="collo-target">qǐchuáng</span></div><div class="vocab-sent">Sentence: Xiànzài tā hái méiyǒu qǐchuáng.</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#4</td><td class="vocab-pinyin-cell">wánr 🎮</td><td>to have fun, play</td>
+                            <td><div class="vocab-collo">Collocation: qù péngyou jiā <span class="collo-target">wánr</span> / gēn péngyou <span class="collo-target">wánr</span></div><div class="vocab-sent">Sentence: Xiàwǔ qù péngyou jiā wánr.</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#3</td><td class="vocab-pinyin-cell">dōngxi 🛍️</td><td>thing, stuff</td>
+                            <td><div class="vocab-collo">Collocation: mǎi <span class="collo-target">dōngxi</span> / chī <span class="collo-target">dōngxi</span></div><div class="vocab-sent">Sentence: Tā shàngwǔ qù shāngchǎng mǎi dōngxi.</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#7</td><td class="vocab-pinyin-cell">xiě ✍️</td><td>to write</td>
+                            <td><div class="vocab-collo">Collocation: <span class="collo-target">xiě</span> Hànzì</div><div class="vocab-sent">Sentence: Shí'èr diǎn xiě Hànzì.</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#8</td><td class="vocab-pinyin-cell">Hànzì 🀄</td><td>Chinese character</td>
+                            <td><div class="vocab-collo">Collocation: yí ge <span class="collo-target">Hànzì</span></div><div class="vocab-sent">Sentence: Tā zhèngzài xiě Hànzì.</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#14</td><td class="vocab-pinyin-cell">Chén 👨</td><td>(a surname)</td>
+                            <td><div class="vocab-collo">Collocation: <span class="collo-target">Chén</span> lǎoshī</div><div class="vocab-sent">Sentence: Chén lǎoshī, nín hǎo.</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Grammar: Adverb "hái" (Still / Yet)</div>
+                
+                <div class="rule-box">
+                    <strong style="font-size: 1.15rem; color: var(--primary-color);">1. "hái" meaning "also / in addition" (Review):</strong>
+                    <br><span style="font-size: 0.95rem; color: var(--text-sub);">Lists extra information (fact A + hái + fact B) or asks for more (hái yào + something).</span>
+                    <br><span class="vocab-pinyin" style="font-size: 1.05rem;">• Wǒ yǒu yí ge gēge, <span class="grammar-hl">hái</span> yǒu liǎng ge mèimei. <span class="translation">(I have one older brother, and also two younger sisters.)</span></span>
+                    <br><span class="vocab-pinyin" style="font-size: 1.05rem;">• Nín <span class="grammar-hl">hái</span> yào shénme? <span class="translation">(Anything else you want?)</span></span>
+                </div>
+
+                <div class="rule-box" style="margin-top: 1rem; border-color: var(--primary-color);">
+                    <strong style="font-size: 1.15rem; color: var(--primary-color);">2. NEW Usage: "hái" meaning "Still / Yet":</strong>
+                    <br><span style="font-size: 0.95rem; color: var(--text-sub);">Shows an action or state hasn't happened or changed yet. ALWAYS used with negative words "méi" or "bù".</span>
+                    
+                    <div class="sentence-builder" style="margin-top: 10px;">
+                        <div class="slot slot-subj">Subject</div>
+                        <div style="font-weight: bold; color: var(--primary-color);">+</div>
+                        <div class="slot slot-time" style="background-color: var(--accent-light); color: var(--primary-color); border-color: var(--primary-color);">hái</div>
+                        <div style="font-weight: bold; color: var(--primary-color);">+</div>
+                        <div class="slot slot-verb" style="background-color: #FEE2E2; color: #991B1B; border-color: #F87171;">méi / bù</div>
+                        <div style="font-weight: bold; color: var(--primary-color);">+</div>
+                        <div class="slot slot-obj">Action</div>
+                    </div>
+                    
+                    <div style="margin-top: 15px;" class="vocab-pinyin">
+                        <span style="font-weight: bold; color: var(--primary-color);">• Tā xiànzài <span class="grammar-hl" style="background-color: #FEE2E2; color: #991B1B;">hái méiyǒu</span> qǐchuáng.</span> <span class="translation">(He still hasn't gotten up.)</span>
+                        <br><span style="font-weight: bold; color: var(--primary-color); margin-top: 8px; display: inline-block;">• Wǒ <span class="grammar-hl" style="background-color: #FEE2E2; color: #991B1B;">hái bù</span> huì shuō Yīngyǔ.</span> <span class="translation">(I still cannot speak English.)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERMISSION & DOUBLE OBJECTS -->
+        <section id="nav-6" class="tab-content">
+            <div class="content-header">
+                <h2>Permission & Double Objects (Pg 177–179)</h2>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <span>Vocabulary: Questions & Modals</span>
+                    <span class="page-badge">Pg 178-179</span>
+                </div>
+                <table class="vocab-table">
+                    <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation & Example Sentence</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="vocab-num">#11</td><td class="vocab-pinyin-cell">yīnggāi</td><td>should, ought to</td>
+                            <td><div class="vocab-collo">Collocation: <span class="collo-target">yīnggāi</span> lái / bù <span class="collo-target">yīnggāi</span></div><div class="vocab-sent">Sentence: Tā yīnggāi lái shàngkè.</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#13</td><td class="vocab-pinyin-cell">kěyǐ</td><td>may, can (permission)</td>
+                            <td><div class="vocab-collo">Collocation: <span class="collo-target">kěyǐ</span> jìnlái / bù <span class="collo-target">kěyǐ</span></div><div class="vocab-sent">Sentence: Kěyǐ wèn wèntí ma? Kěyǐ.</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#1</td><td class="vocab-pinyin-cell">wèi shénme ❓</td><td>why</td>
+                            <td><div class="vocab-collo">Collocation: <span class="collo-target">wèi shénme</span> bù néng...</div><div class="vocab-sent">Sentence: Tā wèi shénme bù néng lái shàngkè?</div></td>
+                        </tr>
+                        <tr>
+                            <td class="vocab-num">#12</td><td class="vocab-pinyin-cell">wèntí ❓</td><td>question, problem</td>
+                            <td><div class="vocab-collo">Collocation: wèn <span class="collo-target">wèntí</span> / méi <span class="collo-target">wèntí</span></div><div class="vocab-sent">Sentence: Wǒ néng bu néng wèn nín yí ge wèntí?</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Grammar: Double Objects Verbs ("jiāo" & "wèn")</div>
+                
+                <div class="rule-box">
+                    <p style="font-size: 1.05rem; margin-bottom: 12px;">Some verbs like <strong>jiāo</strong> (teach) and <strong>wèn</strong> (ask) can take TWO objects. The first object is always the <strong>PERSON</strong>, and the second is the <strong>THING/SUBJECT</strong>.</p>
+                    
+                    <div class="sentence-builder" style="margin-top: 10px;">
+                        <div class="slot slot-subj"><span class="slot-label">Subject</span>Subject</div>
+                        <div style="font-weight: bold; color: var(--primary-color);">+</div>
+                        <div class="slot slot-verb"><span class="slot-label">Verb</span>jiāo / wèn</div>
+                        <div style="font-weight: bold; color: var(--primary-color);">+</div>
+                        <div class="slot slot-prep"><span class="slot-label">Object 1 (Person)</span>Person</div>
+                        <div style="font-weight: bold; color: var(--primary-color);">+</div>
+                        <div class="slot slot-obj"><span class="slot-label">Object 2 (Thing)</span>Subject / Question</div>
+                    </div>
+
+                    <hr style="border: 0.5px dashed var(--border-color); margin: 1.2rem 0;">
+
+                    <div class="builder-wrapper">
+                        <div class="sentence-builder">
+                            <div class="slot slot-subj">Shéi</div>
+                            <div class="slot slot-verb">jiāo</div>
+                            <div class="slot slot-prep">nín</div>
+                            <div class="slot slot-obj">Yīngyǔ?</div>
+                        </div>
+                        <div class="translation">(Who teaches you English?)</div>
+                    </div>
+
+                    <div class="builder-wrapper">
+                        <div class="sentence-builder">
+                            <div class="slot slot-subj">Wǒ</div>
+                            <div class="slot slot-verb">wèn</div>
+                            <div class="slot slot-prep">nín</div>
+                            <div class="slot slot-obj">yí ge wèntí.</div>
+                        </div>
+                        <div class="translation">(I ask you a question.)</div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- TEXT 2 DIALOGUE -->
+        <section id="nav-7" class="tab-content">
+            <div class="content-header">
+                <h2>Text 2: Permission & Prohibition (Pg 177–178)</h2>
+            </div>
+
+            <div class="click-hint">
+                🖱️ Interactive Mode: Click on the English translation to reveal the Pinyin dialogue!
+            </div>
+
+            <div class="card">
+                <div class="card-title">Text 2: Dialogue Lines 1–7</div>
+                
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">1. (Teacher Chen, Ma Dawei cannot come to class today.)</div>
+                    <div class="dlg-py"><span class="speaker">Dīng Lìbō:</span> <span class="hl">Chén</span> lǎoshī, Mǎ Dàwéi jīntiān bù néng lái shàngkè.</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">2. (Why can't he come to class?)</div>
+                    <div class="dlg-py"><span class="speaker">Chén lǎoshī:</span> Tā <span class="hl">wèi shénme</span> bù néng lái shàngkè?</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">3. (Yesterday was Sunday. In the morning he went to the shopping mall to buy things, in the afternoon he went to a friend's home to hang out. He returned to the institute at 11:30 p.m., at 12:00 a.m. he wrote Chinese characters, and at 2:00 a.m. he went to sleep. Now he still has not gotten up.)</div>
+                    <div class="dlg-py"><span class="speaker">Dīng Lìbō:</span> <span class="hl">Zuótiān</span> shì xīngqīrì, tā shàngwǔ qù shāngchǎng mǎi <span class="hl">dōngxi</span>, xiàwǔ qù péngyou jiā <span class="hl">wánr</span>. Tā <span class="hl">wǎnshang</span> shíyī diǎn <span class="hl">bàn</span> huí xuéyuàn, shí'èr diǎn <span class="hl">xiě</span> <span class="hl">Hànzì</span>, liǎng diǎnzhōng <span class="hl">shuìjiào</span>. Xiànzài tā hái méiyǒu <span class="hl">qǐchuáng</span>.</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">4. (He should come to class.)</div>
+                    <div class="dlg-py"><span class="speaker">Chén lǎoshī:</span> Tā <span class="hl">yīnggāi</span> lái shàngkè.</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">5. (Teacher, may I ask you a question?)</div>
+                    <div class="dlg-py"><span class="speaker">Dīng Lìbō:</span> Lǎoshī, wǒ néng bu néng wèn nín yí ge <span class="hl">wèntí</span>?</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">6. (You may.)</div>
+                    <div class="dlg-py"><span class="speaker">Chén lǎoshī:</span> <span class="hl">Kěyǐ</span>.</div>
+                </div>
+
+                <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
+                    <div class="dlg-eng">7. (Why do we have class at 8:00?)</div>
+                    <div class="dlg-py"><span class="speaker">Dīng Lìbō:</span> Wǒmen <span class="hl">wèi shénme</span> bā diǎn shàngkè?</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- WRAP-UP & HOMEWORK -->
+        <section id="nav-8" class="tab-content">
+            <div class="content-header">
+                <h2>Wrap-up & Homework</h2>
+            </div>
+
+            <div class="click-hint">
+                🖱️ Interactive Mode: Click on any Pinyin sentence below to reveal its English translation!
+            </div>
+            
+            <div class="card">
+                <div class="card-title">
+                    <span>Lesson 11 Key Sentences</span>
+                    <span class="page-badge">Pg 180</span>
+                </div>
+
+                <div class="key-sent-card" onclick="this.classList.toggle('revealed')">
+                    <div class="key-sent-py">1. Qǐngwèn, xiànzài jǐ diǎn?</div>
+                    <div class="key-sent-eng">(May I ask, what time is it now?)</div>
+                </div>
+
+                <div class="key-sent-card" onclick="this.classList.toggle('revealed')">
+                    <div class="key-sent-py">2. Wǒ huì shuō yìdiǎnr Hànyǔ.</div>
+                    <div class="key-sent-eng">(I can speak a little Chinese.)</div>
+                </div>
+
+                <div class="key-sent-card" onclick="this.classList.toggle('revealed')">
+                    <div class="key-sent-py">3. Nǐmen jǐ diǎn shàngkè?</div>
+                    <div class="key-sent-eng">(What time do you have class?)</div>
+                </div>
+
+                <div class="key-sent-card" onclick="this.classList.toggle('revealed')">
+                    <div class="key-sent-py">4. Xiànzài chà wǔ fēn bā diǎn, nín hái yǒu wǔ fēnzhōng.</div>
+                    <div class="key-sent-eng">(Now it is five minutes to eight, you still have five minutes.)</div>
+                </div>
+
+                <div class="key-sent-card" onclick="this.classList.toggle('revealed')">
+                    <div class="key-sent-py">5. Tā wèi shénme bù néng lái shàngkè?</div>
+                    <div class="key-sent-eng">(Why can't he come to class?)</div>
+                </div>
+
+                <div class="key-sent-card" onclick="this.classList.toggle('revealed')">
+                    <div class="key-sent-py">6. Tā zuótiān xiàwǔ qù péngyou jiā wánr.</div>
+                    <div class="key-sent-eng">(Yesterday afternoon he went to a friend's home to hang out.)</div>
+                </div>
+
+                <div class="key-sent-card" onclick="this.classList.toggle('revealed')">
+                    <div class="key-sent-py">7. Tā yīnggāi lái shàngkè.</div>
+                    <div class="key-sent-eng">(He should come to class.)</div>
+                </div>
+
+                <div class="key-sent-card" onclick="this.classList.toggle('revealed')">
+                    <div class="key-sent-py">8. Wǒ néng bu néng wèn nín yí ge wèntí?</div>
+                    <div class="key-sent-eng">(May I ask you a question?)</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Homework Assignments</div>
+                <div class="dlg-turn">1. Review all 32 vocabulary words from Lesson 11.</div>
+                <div class="dlg-turn">2. Practice reading Text 1 and Text 2 aloud until fluent.</div>
+                <div class="dlg-turn">3. Complete the Pattern Drills and Conversation Practice on Pages 180-184.</div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- TAB SWITCHING SCRIPT -->
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
