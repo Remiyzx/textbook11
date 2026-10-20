@@ -127,6 +127,87 @@
         .page-badge { background-color: #DBEAFE; color: #1E40AF; font-size: 0.85rem; padding: 4px 12px; border-radius: 12px; font-weight: bold; }
         .translation { display: inline; font-size: 1.05rem; color: var(--text-sub); font-weight: normal; margin-left: 8px; font-family: 'Helvetica Neue', Arial, sans-serif; }
 
+        /* SUPPLEMENTARY VOCABULARY: MONOCHROME (HIGH-CONTRAST SLATE) */
+        .supp-card {
+            background-color: #FFFFFF;
+            border: 2px solid #64748B;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+            margin-bottom: 1.8rem;
+            padding: 2rem;
+            width: 100%;
+        }
+        .supp-title {
+            font-size: 1.35rem;
+            font-weight: bold;
+            color: #0F172A;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px dashed #94A3B8;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .supp-badge {
+            background-color: #334155;
+            color: #F8FAFC;
+            font-size: 0.85rem;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+        .supp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.8rem;
+            font-size: 1.1rem;
+        }
+        .supp-table th, .supp-table td {
+            text-align: left;
+            padding: 1rem 0.8rem;
+            border-bottom: 1px solid #CBD5E1;
+            vertical-align: middle;
+        }
+        .supp-table th {
+            background-color: #F1F5F9;
+            color: #0F172A;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid #64748B;
+        }
+        .supp-num {
+            font-weight: bold;
+            color: #475569;
+            width: 12%;
+        }
+        .supp-table td.supp-pinyin-cell {
+            width: 22%;
+            font-weight: bold;
+            color: #0F172A;
+            font-size: 1.25rem;
+            font-family: var(--pinyin-font) !important;
+        }
+        .supp-collo {
+            color: #475569;
+            margin-bottom: 4px;
+            font-size: 1.1rem;
+            font-family: var(--pinyin-font) !important;
+        }
+        .supp-collo-target {
+            font-weight: bold;
+            color: #0F172A;
+            background-color: #E2E8F0;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .supp-sent {
+            color: #1E293B;
+            font-weight: 500;
+            font-size: 1.15rem;
+            font-family: var(--pinyin-font) !important;
+        }
+
         /* TABLES & HIGHLIGHTS WITH STANDARD PINYIN FONT */
         .vocab-table { width: 100%; border-collapse: collapse; margin-top: 0.8rem; font-size: 1.1rem; }
         .vocab-table th, .vocab-table td { text-align: left; padding: 1rem 0.8rem; border-bottom: 1px solid var(--border-color); vertical-align: middle; }
@@ -379,13 +460,13 @@
                 </table>
             </div>
 
-            <!-- REFACTORED VISUAL GRAMMAR FOR CHÀ VS KÈ (NO CHINESE CHARACTERS) -->
+            <!-- VISUAL GRAMMAR: CHÀ VS KÈ -->
             <div class="card">
                 <div class="card-title">Grammar Focus: "chà" vs "kè" Calculation Logic</div>
                 
                 <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 10px;">
                     <!-- CHÀ BOX (SUBTRACT) -->
-                    <div style="flex: 1; min-width: 300px; background: #F0F9FF; border: 2px solid #3B82F6; border-radius: 12px; padding: 1.4rem; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+                    <div style="flex: 1; min-width: 300px; background: #F0F9FF; border: 2px solid #3B82F6; border-radius: 12px; padding: 1.4rem;">
                         <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 2px dashed #93C5FD; padding-bottom: 8px;">
                             <span style="font-size: 1.6rem; font-weight: bold; color: #1E3A8A; font-family: var(--pinyin-font);">chà</span>
                             <span style="background: #2563EB; color: white; font-size: 0.85rem; font-weight: bold; padding: 3px 10px; border-radius: 12px;">SUBTRACT ➖</span>
@@ -405,7 +486,7 @@
                     </div>
 
                     <!-- KÈ BOX (ADD) -->
-                    <div style="flex: 1; min-width: 300px; background: #F0F9FF; border: 2px solid #2563EB; border-radius: 12px; padding: 1.4rem; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+                    <div style="flex: 1; min-width: 300px; background: #F0F9FF; border: 2px solid #2563EB; border-radius: 12px; padding: 1.4rem;">
                         <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 2px dashed #93C5FD; padding-bottom: 8px;">
                             <span style="font-size: 1.6rem; font-weight: bold; color: #1E3A8A; font-family: var(--pinyin-font);">kè</span>
                             <span style="background: #0284C7; color: white; font-size: 0.85rem; font-weight: bold; padding: 3px 10px; border-radius: 12px;">ADD ➕</span>
@@ -501,15 +582,16 @@
             </div>
         </section>
 
-        <!-- EXPRESSING ABILITY & ADVERBS -->
+        <!-- EXPRESSING ABILITY & ACTIONS -->
         <section id="nav-2" class="tab-content">
             <div class="content-header">
                 <h2>Expressing Ability & Actions (Pg 174–176)</h2>
             </div>
 
+            <!-- CORE VOCABULARY -->
             <div class="card">
                 <div class="card-title">
-                    <span>Vocabulary: Actions & Modals</span>
+                    <span>Core Vocabulary: Actions & Modals</span>
                     <span class="page-badge">Pg 176</span>
                 </div>
                 <table class="vocab-table">
@@ -562,6 +644,55 @@
                         <tr>
                             <td class="vocab-num">#18</td><td class="vocab-pinyin-cell">báibái 👋</td><td>bye-bye</td>
                             <td><div class="vocab-collo">Collocation: <span class="collo-target">báibái</span></div><div class="vocab-sent">Sentence: Báibái!</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- SUPPLEMENTARY WORDS (PG 176) - MONOCHROME SLATE STYLE -->
+            <div class="supp-card">
+                <div class="supp-title">
+                    <span>Supplementary Vocabulary: Foreign Languages</span>
+                    <span class="supp-badge">Pg 176</span>
+                </div>
+                <table class="supp-table">
+                    <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation & Example Sentence</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="supp-num">Supp #1</td>
+                            <td class="supp-pinyin-cell">Fǎyǔ 🇫🇷</td>
+                            <td>French</td>
+                            <td>
+                                <div class="supp-collo">Collocation: xuéxí <span class="supp-collo-target">Fǎyǔ</span> / shuō <span class="supp-collo-target">Fǎyǔ</span></div>
+                                <div class="supp-sent">Sentence: Tā huì shuō Fǎyǔ.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">Supp #2</td>
+                            <td class="supp-pinyin-cell">Déyǔ 🇩🇪</td>
+                            <td>German</td>
+                            <td>
+                                <div class="supp-collo">Collocation: <span class="supp-collo-target">Déyǔ</span> kè / jiāo <span class="supp-collo-target">Déyǔ</span></div>
+                                <div class="supp-sent">Sentence: Sòng lǎoshī jiāo wǒmen Déyǔ.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">Supp #3</td>
+                            <td class="supp-pinyin-cell">Éyǔ 🇷🇺</td>
+                            <td>Russian</td>
+                            <td>
+                                <div class="supp-collo">Collocation: xué <span class="supp-collo-target">Éyǔ</span> / <span class="supp-collo-target">Éyǔ</span> shū</div>
+                                <div class="supp-sent">Sentence: Zhāng jiàoshòu bú huì shuō Éyǔ.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">Supp #4</td>
+                            <td class="supp-pinyin-cell">Rìyǔ 🇯🇵</td>
+                            <td>Japanese</td>
+                            <td>
+                                <div class="supp-collo">Collocation: shuō <span class="supp-collo-target">Rìyǔ</span> / shàng <span class="supp-collo-target">Rìyǔ</span> kè</div>
+                                <div class="supp-sent">Sentence: Dīng xiǎojie chángcháng xuéxí Rìyǔ.</div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -624,7 +755,7 @@
                 </div>
             </div>
 
-            <!-- REFACTORED VERB DÀO (NO CHINESE CHARACTERS) -->
+            <!-- VERB DÀO & LOCATION VERBS -->
             <div class="card">
                 <div class="card-title">Grammar Focus: Verb "dào" & Common Location Verbs</div>
                 
@@ -674,36 +805,31 @@
                 </div>
             </div>
 
-            <!-- ADVERBS OF DEGREE (UPDATED BÙ TONE SANDHI: BÚ DÀ) -->
+            <!-- ADVERBS OF DEGREE -->
             <div class="card">
                 <div class="card-title">Grammar: Adverbs of Degree (bù, bú tài, hěn, zhēn, tài...le)</div>
                 <div class="rule-box">
                     <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                        <!-- 1. BÙ -->
                         <div style="flex: 1; min-width: 180px; background: white; padding: 12px; border-radius: 8px; border-top: 4px solid #E11D48;">
                             <strong style="color: #E11D48;">bù (not)</strong>
                             <br><span style="font-size: 0.9rem; color: var(--text-sub);">Complete negation / zero degree.</span>
                             <br><span class="vocab-pinyin" style="font-size: 1rem; color: #E11D48;">Zhège píngguǒ <span style="font-weight: bold; text-decoration: underline;">bú</span> dà.</span>
                         </div>
-                        <!-- 2. BÚ TÀI -->
                         <div style="flex: 1; min-width: 180px; background: white; padding: 12px; border-radius: 8px; border-top: 4px solid var(--text-sub);">
                             <strong style="color: var(--text-sub);">bú tài (not very)</strong>
                             <br><span style="font-size: 0.9rem; color: var(--text-sub);">Objectively describes insufficiency. Mild.</span>
                             <br><span class="vocab-pinyin" style="font-size: 1rem;">Zhège píngguǒ bú tài dà.</span>
                         </div>
-                        <!-- 3. HĚN -->
                         <div style="flex: 1; min-width: 180px; background: white; padding: 12px; border-radius: 8px; border-top: 4px solid var(--primary-color);">
                             <strong style="color: var(--primary-color);">hěn (very)</strong>
                             <br><span style="font-size: 0.9rem; color: var(--text-sub);">States facts/mild emphasis. Grammatically needed.</span>
                             <br><span class="vocab-pinyin" style="font-size: 1rem; color: var(--primary-color);">Zhège píngguǒ hěn dà.</span>
                         </div>
-                        <!-- 4. ZHĒN -->
                         <div style="flex: 1; min-width: 180px; background: white; padding: 12px; border-radius: 8px; border-top: 4px solid #047857;">
                             <strong style="color: #047857;">zhēn (really)</strong>
                             <br><span style="font-size: 0.9rem; color: var(--text-sub);">Subjective observation. Shows surprise/liking NOW.</span>
                             <br><span class="vocab-pinyin" style="font-size: 1rem; color: #047857;">Zhège píngguǒ zhēn dà.</span>
                         </div>
-                        <!-- 5. TÀI...LE -->
                         <div style="flex: 1; min-width: 180px; background: white; padding: 12px; border-radius: 8px; border-top: 4px solid #7C3AED;">
                             <strong style="color: #7C3AED;">tài...le (too / extremely)</strong>
                             <br><span style="font-size: 0.9rem; color: var(--text-sub);">Extremely subjective evaluation or complaints.</span>
@@ -851,15 +977,16 @@
             </div>
         </section>
 
-        <!-- DAILY ROUTINE (Text 2 Prep - REMOVED #14 CHÉN & UPDATED HÀNZÌ SENTENCE) -->
+        <!-- DAILY ROUTINE (Text 2 Prep) -->
         <section id="nav-5" class="tab-content">
             <div class="content-header">
                 <h2>Daily Routine (Pg 177–179)</h2>
             </div>
 
+            <!-- CORE VOCABULARY -->
             <div class="card">
                 <div class="card-title">
-                    <span>Vocabulary: Time & Routine</span>
+                    <span>Core Vocabulary: Time & Routine</span>
                     <span class="page-badge">Pg 178-179</span>
                 </div>
                 <table class="vocab-table">
@@ -894,7 +1021,7 @@
                             <td><div class="vocab-collo">Collocation: qù péngyou jiā <span class="collo-target">wánr</span> / gēn péngyou <span class="collo-target">wánr</span></div><div class="vocab-sent">Sentence: Xiàwǔ qù péngyou jiā wánr.</div></td>
                         </tr>
                         <tr>
-                            <td class="vocab-num">#3</td><td class="vocab-pinyin-cell">dōngxi 🛍️️</td><td>thing, stuff</td>
+                            <td class="vocab-num">#3</td><td class="vocab-pinyin-cell">dōngxi 🛍️</td><td>thing, stuff</td>
                             <td><div class="vocab-collo">Collocation: mǎi <span class="collo-target">dōngxi</span> / chī <span class="collo-target">dōngxi</span></div><div class="vocab-sent">Sentence: Tā shàngwǔ qù shāngchǎng mǎi dōngxi.</div></td>
                         </tr>
                         <tr>
@@ -909,11 +1036,104 @@
                 </table>
             </div>
 
-            <!-- HIGHLY VISUAL REFACTORED GRAMMAR FOR ADVERB "HÁI" -->
+            <!-- SUPPLEMENTARY WORDS (PG 179-180: ROUTINE & LIFE) - MONOCHROME SLATE STYLE -->
+            <div class="supp-card">
+                <div class="supp-title">
+                    <span>Supplementary Vocabulary: Routine, Actions & Transport</span>
+                    <span class="supp-badge">Pg 179-180</span>
+                </div>
+                <table class="supp-table">
+                    <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation & Example Sentence</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="supp-num">Supp #1</td>
+                            <td class="supp-pinyin-cell">xiàkè 🔔</td>
+                            <td>to dismiss class</td>
+                            <td>
+                                <div class="supp-collo">Collocation: shíyī diǎn <span class="supp-collo-target">xiàkè</span> / <span class="supp-collo-target">xiàkè</span> yǐhòu</div>
+                                <div class="supp-sent">Sentence: Wǒmen shíyī diǎn wǔshí fēn xiàkè.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">Supp #2</td>
+                            <td class="supp-pinyin-cell">chīfàn 🍚</td>
+                            <td>to eat (a meal)</td>
+                            <td>
+                                <div class="supp-collo">Collocation: qù <span class="supp-collo-target">chīfàn</span> / shí'èr diǎn <span class="supp-collo-target">chīfàn</span></div>
+                                <div class="supp-sent">Sentence: Tāmen shí'èr diǎn yí kè chīfàn.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">Supp #3</td>
+                            <td class="supp-pinyin-cell">kāichē 🚗<br><small style="color:#64748B;">chē: vehicle</small></td>
+                            <td>to drive a car</td>
+                            <td>
+                                <div class="supp-collo">Collocation: huì <span class="supp-collo-target">kāichē</span> / <span class="supp-collo-target">kāichē</span> huí jiā</div>
+                                <div class="supp-sent">Sentence: Bàba jīntiān bù néng kāichē.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">Supp #4</td>
+                            <td class="supp-pinyin-cell">tiàowǔ 💃</td>
+                            <td>to dance</td>
+                            <td>
+                                <div class="supp-collo">Collocation: xǐhuan <span class="supp-collo-target">tiàowǔ</span> / qù <span class="supp-collo-target">tiàowǔ</span></div>
+                                <div class="supp-sent">Sentence: Mèimei huì tiàowǔ.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">Supp #5</td>
+                            <td class="supp-pinyin-cell">chànggē 🎤</td>
+                            <td>to sing (a song)</td>
+                            <td>
+                                <div class="supp-collo">Collocation: chángcháng <span class="supp-collo-target">chànggē</span> / <span class="supp-collo-target">chàng</span> Zhōngguó gē</div>
+                                <div class="supp-sent">Sentence: Tā chànggē chàng de hěn hǎo.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">Supp #7</td>
+                            <td class="supp-pinyin-cell">lǐwù 🎁</td>
+                            <td>gift, present</td>
+                            <td>
+                                <div class="supp-collo">Collocation: sòng <span class="supp-collo-target">lǐwù</span> / yí ge <span class="supp-collo-target">lǐwù</span></div>
+                                <div class="supp-sent">Sentence: Wǒ yīnggāi sòng tā yí ge lǐwù.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">Supp #8</td>
+                            <td class="supp-pinyin-cell">biǎo ⌚</td>
+                            <td>watch, clock</td>
+                            <td>
+                                <div class="supp-collo">Collocation: yì zhī <span class="supp-collo-target">biǎo</span> / nín de <span class="supp-collo-target">biǎo</span></div>
+                                <div class="supp-sent">Sentence: Qǐngwèn, nín de biǎo xiànzài jǐ diǎn?</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">Supp #9</td>
+                            <td class="supp-pinyin-cell">kuài ⚡</td>
+                            <td>fast</td>
+                            <td>
+                                <div class="supp-collo">Collocation: <span class="supp-collo-target">kuài</span> le yìdiǎnr / hěn <span class="supp-collo-target">kuài</span></div>
+                                <div class="supp-sent">Sentence: Wǒ de biǎo kuài le wǔ fēnzhōng.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">Supp #15</td>
+                            <td class="supp-pinyin-cell">dǎdī 🚕</td>
+                            <td>to hail a taxi</td>
+                            <td>
+                                <div class="supp-collo">Collocation: <span class="supp-collo-target">dǎdī</span> huí xuéyuàn / chángcháng <span class="supp-collo-target">dǎdī</span></div>
+                                <div class="supp-sent">Sentence: Tā qī diǎn sān kè dǎdī huí xuéyuàn.</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ADVERB HÁI -->
             <div class="card">
                 <div class="card-title">Grammar Focus: Adverb "hái" (Still / Yet) Visual Scaffolding</div>
                 
-                <!-- DUAL USAGE COMPARISON -->
                 <div style="display: flex; gap: 15px; margin-bottom: 1.5rem; flex-wrap: wrap;">
                     <div style="flex: 1; min-width: 280px; background: white; border: 2px solid var(--border-color); border-radius: 10px; padding: 1.2rem; border-top: 6px solid var(--accent-color);">
                         <span style="font-size: 0.85rem; font-weight: bold; color: var(--accent-color); text-transform: uppercase;">USAGE 1 (REVIEW)</span>
@@ -936,7 +1156,6 @@
                     </div>
                 </div>
 
-                <!-- VISUAL SENTENCE BUILDER SLOTS -->
                 <div class="rule-box" style="border-color: var(--primary-color);">
                     <strong style="font-size: 1.15rem; color: var(--primary-color); display: block; margin-bottom: 8px;">Visual Sentence Structure ("Still / Yet"):</strong>
                     
@@ -981,9 +1200,10 @@
                 <h2>Permission & Double Objects (Pg 177–179)</h2>
             </div>
 
+            <!-- CORE VOCABULARY -->
             <div class="card">
                 <div class="card-title">
-                    <span>Vocabulary: Questions & Modals</span>
+                    <span>Core Vocabulary: Questions & Modals</span>
                     <span class="page-badge">Pg 178-179</span>
                 </div>
                 <table class="vocab-table">
@@ -1009,6 +1229,74 @@
                 </table>
             </div>
 
+            <!-- SUPPLEMENTARY WORDS (PG 179-180: QUESTIONS & PERMISSIONS) - MONOCHROME SLATE STYLE -->
+            <div class="supp-card">
+                <div class="supp-title">
+                    <span>Supplementary Vocabulary: Interactions, Conditions & Permissions</span>
+                    <span class="supp-badge">Pg 179-180</span>
+                </div>
+                <table class="supp-table">
+                    <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation & Example Sentence</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="supp-num">Supp #6</td>
+                            <td class="supp-pinyin-cell">huídá 🙋</td>
+                            <td>to answer</td>
+                            <td>
+                                <div class="supp-collo">Collocation: <span class="supp-collo-target">huídá</span> wèntí / <span class="supp-collo-target">huídá</span> tā</div>
+                                <div class="supp-sent">Sentence: Tā néng bu néng huídá nín de wèntí?</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">Supp #10</td>
+                            <td class="supp-pinyin-cell">děng ⏳</td>
+                            <td>to wait</td>
+                            <td>
+                                <div class="supp-collo">Collocation: <span class="supp-collo-target">děng</span> yíxià / <span class="supp-collo-target">děng</span> lǎoshī</div>
+                                <div class="supp-sent">Sentence: Duìbuqǐ, qǐng děng yíxià.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">Supp #11</td>
+                            <td class="supp-pinyin-cell">xīyān 🚭</td>
+                            <td>to smoke</td>
+                            <td>
+                                <div class="supp-collo">Collocation: bù kěyǐ <span class="supp-collo-target">xīyān</span> / zài zhèr <span class="supp-collo-target">xīyān</span></div>
+                                <div class="supp-sent">Sentence: Duìbuqǐ, zhèr bù kěyǐ xīyān.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">Supp #12</td>
+                            <td class="supp-pinyin-cell">nán 🤯</td>
+                            <td>difficult</td>
+                            <td>
+                                <div class="supp-collo">Collocation: hěn <span class="supp-collo-target">nán</span> / bù <span class="supp-collo-target">nán</span></div>
+                                <div class="supp-sent">Sentence: Jīntiān de kè hěn nán.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">Supp #13</td>
+                            <td class="supp-pinyin-cell">pāizhào 📷</td>
+                            <td>to take pictures</td>
+                            <td>
+                                <div class="supp-collo">Collocation: kěyǐ <span class="supp-collo-target">pāizhào</span> ma / zài zhèr <span class="supp-collo-target">pāizhào</span></div>
+                                <div class="supp-sent">Sentence: Zhèr kěyǐ pāizhào ma?</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="supp-num">Supp #14</td>
+                            <td class="supp-pinyin-cell">biàntiáo 📝</td>
+                            <td>note</td>
+                            <td>
+                                <div class="supp-collo">Collocation: xiě <span class="supp-collo-target">biàntiáo</span> / yì zhāng <span class="supp-collo-target">biàntiáo</span></div>
+                                <div class="supp-sent">Sentence: Tā gěi péngyou xiě le yì zhāng biàntiáo.</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- DOUBLE OBJECTS -->
             <div class="card">
                 <div class="card-title">Grammar: Double Objects Verbs ("jiāo" & "wèn")</div>
                 
@@ -1161,7 +1449,7 @@
 
             <div class="card">
                 <div class="card-title">Homework Assignments</div>
-                <div class="dlg-turn">1. Review all 32 vocabulary words from Lesson 11.</div>
+                <div class="dlg-turn">1. Review all 31 core vocabulary words and 19 supplementary words from Lesson 11.</div>
                 <div class="dlg-turn">2. Practice reading Text 1 and Text 2 aloud until fluent.</div>
                 <div class="dlg-turn">3. Complete the Pattern Drills and Conversation Practice on Pages 180-184.</div>
             </div>
