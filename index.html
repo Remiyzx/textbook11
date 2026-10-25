@@ -44,7 +44,7 @@
             line-height: 1.6;
         }
 
-        /* TOP NAVIGATION BAR */
+        /* TOP NAVIGATION BAR - FROZEN & STRICTLY SINGLE ROW */
         .top-navbar {
             position: sticky;
             top: 0;
@@ -56,7 +56,7 @@
         }
         
         .nav-header {
-            padding: 0.8rem 1.8rem;
+            padding: 0.6rem 1.8rem;
             color: white;
             display: flex;
             align-items: center;
@@ -64,23 +64,24 @@
             border-bottom: 1px solid rgba(255,255,255,0.15);
         }
         
-        .nav-header h1 { font-size: 1.35rem; margin: 0; letter-spacing: 0.5px; font-family: var(--pinyin-font); font-weight: bold;}
+        .nav-header h1 { font-size: 1.3rem; margin: 0; letter-spacing: 0.5px; font-family: var(--pinyin-font); font-weight: bold;}
         .nav-header p { font-size: 0.95rem; color: #93C5FD; margin: 0; font-weight: bold; }
         
         .nav-tabs {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap; /* STRICTLY 1 ROW */
             justify-content: center;
-            gap: 8px;
-            padding: 0.6rem 0.8rem;
+            gap: 6px;
+            padding: 0.4rem 0.6rem;
+            overflow-x: auto;
         }
         
         .nav-tabs button {
             background: rgba(255,255,255,0.12);
             border: 1px solid rgba(255,255,255,0.2);
             color: #E0E7FF;
-            padding: 0.45rem 0.8rem;
-            font-size: 0.85rem;
+            padding: 0.35rem 0.55rem;
+            font-size: 0.76rem;
             font-weight: 600;
             cursor: pointer;
             border-radius: 6px;
@@ -98,12 +99,6 @@
             color: var(--primary-color);
             border-color: #FFFFFF;
             font-weight: bold;
-        }
-
-        /* FLEX BREAK TO FORCE BREAK ONWARDS TO NEXT ROW */
-        .tab-break-line {
-            flex-basis: 100%;
-            height: 0;
         }
 
         /* MAIN SLIDE STAGE */
@@ -364,7 +359,7 @@
 </head>
 <body>
 
-    <!-- TOP NAVIGATION BAR -->
+    <!-- TOP NAVIGATION BAR (SINGLE ROW - FROZEN) -->
     <header class="top-navbar">
         <div class="nav-header">
             <h1>Lesson 11 Wǒ huì shuō yìdiǎnr Hànyǔ</h1>
@@ -373,17 +368,13 @@
         <div class="nav-tabs">
             <button class="tab-btn active" onclick="openTab(event, 'nav-0')">📌 Agenda</button>
             <button class="tab-btn" onclick="openTab(event, 'nav-1')">⏰ Time & Age</button>
-            <button class="tab-btn" onclick="openTab(event, 'nav-2')">🗣️ Expressing Ability</button>
+            <button class="tab-btn" onclick="openTab(event, 'nav-2')">🗣️ Ability & Actions</button>
             <button class="tab-btn" onclick="openTab(event, 'nav-3')">💬 Text 1</button>
-            
-            <!-- LINE BREAK TO PUSH BREAK ONWARDS TO NEXT ROW -->
-            <div class="tab-break-line"></div>
-            
             <button class="tab-btn" onclick="openTab(event, 'tab-break')">☕ Break</button>
             <button class="tab-btn" onclick="openTab(event, 'nav-5')">📅 Daily Routine</button>
-            <button class="tab-btn" onclick="openTab(event, 'nav-6')">✋ Permission & Double Objects</button>
+            <button class="tab-btn" onclick="openTab(event, 'nav-6')">✋ Permission & Double Obj</button>
             <button class="tab-btn" onclick="openTab(event, 'nav-7')">💬 Text 2</button>
-            <button class="tab-btn" onclick="openTab(event, 'nav-8')">📝 Wrap-up & Homework</button>
+            <button class="tab-btn" onclick="openTab(event, 'nav-8')">📝 Wrap-up & HW</button>
         </div>
     </header>
 
@@ -442,7 +433,7 @@
                         </tr>
                         <tr>
                             <td class="vocab-num">#6</td><td class="vocab-pinyin-cell">kè ⏳</td><td>quarter (15 mins)</td>
-                            <td><div class="vocab-collo">Collocation: yí <span class="collo-target">kè</span> zhōng / sān <span class="collo-target">kè</span></div><div class="vocab-sent">Sentence: Chà yí kè bā diǎn.</div></td>
+                            <td><div class="vocab-collo">Collocation: yí <span class="collo-target">kè</span> / sān <span class="collo-target">kè</span></div><div class="vocab-sent">Sentence: Chà yí kè bā diǎn.</div></td>
                         </tr>
                         <tr>
                             <td class="vocab-num">#5</td><td class="vocab-pinyin-cell">chà 📉</td><td>to be short of, lack</td>
@@ -460,7 +451,7 @@
                 </table>
             </div>
 
-            <!-- VISUAL GRAMMAR: CHÀ VS KÈ -->
+            <!-- CHÀ VS KÈ CALCULATION (UPDATED LABELS BELOW TRANSLATION) -->
             <div class="card">
                 <div class="card-title">Grammar Focus: "chà" vs "kè" Calculation Logic</div>
                 
@@ -476,10 +467,10 @@
                             <li><strong>Logic:</strong> Count <strong>backward</strong> from the next full hour</li>
                             <li style="margin-top: 10px;">
                                 <div style="background: white; padding: 10px 14px; border-radius: 8px; border-left: 4px solid #2563EB; margin-top: 6px;">
-                                    <span style="font-weight: bold; color: #0F172A;">Clock Time: 7:45</span>
-                                    <br><span class="vocab-pinyin" style="color: #1E3A8A; font-size: 1.15rem;">chà yí kè bā diǎn</span>
+                                    <span class="vocab-pinyin" style="color: #1E3A8A; font-size: 1.25rem;">chà yí kè bā diǎn</span>
                                     <br><span style="color: #475569; font-size: 0.95rem;">= 8:00 - 15 minutes</span>
                                     <br><span style="color: #2563EB; font-weight: bold;">➔ a quarter <u>to</u> eight</span>
+                                    <br><span style="font-weight: bold; color: #0F172A; display: inline-block; margin-top: 4px;">(Clock Time: 7:45)</span>
                                 </div>
                             </li>
                         </ul>
@@ -497,13 +488,48 @@
                             <li class="vocab-pinyin" style="font-size: 0.95rem; color: #1E3A8A;">• sān kè = 45 mins</li>
                             <li style="margin-top: 10px;">
                                 <div style="background: white; padding: 10px 14px; border-radius: 8px; border-left: 4px solid #0284C7; margin-top: 6px;">
-                                    <span style="font-weight: bold; color: #0F172A;">Clock Time: 8:15</span>
-                                    <br><span class="vocab-pinyin" style="color: #1E3A8A; font-size: 1.15rem;">bā diǎn yí kè</span>
+                                    <span class="vocab-pinyin" style="color: #1E3A8A; font-size: 1.25rem;">bā diǎn yí kè</span>
                                     <br><span style="color: #475569; font-size: 0.95rem;">= 8:00 + 15 minutes</span>
                                     <br><span style="color: #0284C7; font-weight: bold;">➔ a quarter <u>past</u> eight</span>
+                                    <br><span style="font-weight: bold; color: #0F172A; display: inline-block; margin-top: 4px;">(Clock Time: 8:15)</span>
                                 </div>
                             </li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GRAMMAR: HÁI IN TIME EXPRESSIONS (REMAINING TIME VS CURRENT TIME) -->
+            <div class="card">
+                <div class="card-title">Grammar Focus: "hái" in Time Expressions (Remaining Time vs Current Time)</div>
+                <div class="rule-box">
+                    <p style="font-size: 1.05rem; margin-bottom: 12px;">When telling time in conversation, pay close attention to the distinction between stating the <strong>clock time</strong> and stating the <strong>remaining duration</strong> with <span class="grammar-hl">hái</span>:</p>
+                    
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 280px; background: white; padding: 14px; border-radius: 8px; border-left: 5px solid var(--correct-blue);">
+                            <strong style="color: var(--correct-blue); font-size: 1.15rem;">Current Clock Time (Neutral Announcement)</strong>
+                            <div class="vocab-pinyin" style="margin-top: 8px; font-size: 1.2rem; color: var(--primary-color);">chà wǔ fēn bā diǎn (7:55)</div>
+                            <p style="font-size: 0.95rem; color: var(--text-sub); margin-top: 6px;">
+                                • States the CURRENT time objectively on the clock.<br>
+                                • General time announcement / neutral response to <em>"Qǐngwèn xiànzài jǐ diǎn?"</em>
+                            </p>
+                        </div>
+                        <div style="flex: 1; min-width: 280px; background: white; padding: 14px; border-radius: 8px; border-left: 5px solid var(--answer-purple);">
+                            <strong style="color: var(--answer-purple); font-size: 1.15rem;">Remaining Duration with "hái" (Urgent Reminder)</strong>
+                            <div class="vocab-pinyin" style="margin-top: 8px; font-size: 1.2rem; color: var(--answer-purple);">hái yǒu wǔ fēnzhōng (dào bā diǎn)</div>
+                            <p style="font-size: 0.95rem; color: var(--text-sub); margin-top: 6px;">
+                                • Emphasizes the REMAINING time before a deadline or scheduled event.<br>
+                                • Urgent reminder: <em>"Nín hái yǒu wǔ fēnzhōng."</em> (You still have five minutes left before class begins!)
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 15px; padding: 12px; background: white; border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                        <strong style="color: var(--primary-color);">Combined In-Context Example:</strong>
+                        <div class="vocab-pinyin" style="margin-top: 6px; font-size: 1.15rem;">
+                            Xiànzài <span class="grammar-hl">chà wǔ fēn bā diǎn</span>, nín <span class="grammar-hl">hái yǒu wǔ fēnzhōng</span>.
+                        </div>
+                        <div class="translation">(Now it is five minutes to eight [current time], you still have five minutes [remaining duration].)</div>
                     </div>
                 </div>
             </div>
@@ -599,7 +625,7 @@
                     <tbody>
                         <tr>
                             <td class="vocab-num">#1</td><td class="vocab-pinyin-cell">huì</td><td>can, know how to</td>
-                            <td><div class="vocab-collo">Collocation: <span class="collo-target">huì</span> shuō Hànyǔ / bú <span class="collo-target">huì</span></div><div class="vocab-sent">Sentence: Wǒ huì shuō yìdiǎnr Hànyǔ.</div></td>
+                            <td><div class="vocab-collo">Collocation: <span class="collo-target">huì</span> shuō Hànyǔ / <span class="collo-target">bú</span> huì</div><div class="vocab-sent">Sentence: Wǒ huì shuō yìdiǎnr Hànyǔ.</div></td>
                         </tr>
                         <tr>
                             <td class="vocab-num">#9</td><td class="vocab-pinyin-cell">néng</td><td>can, be able to</td>
@@ -615,7 +641,7 @@
                         </tr>
                         <tr>
                             <td class="vocab-num">#3</td><td class="vocab-pinyin-cell">sījī 🚕</td><td>driver</td>
-                            <td><div class="vocab-collo">Collocation: chūzūchē <span class="collo-target">sījī</span></div><div class="vocab-sent">Sentence: Sījī huì shuō Yīngyǔ.</div></td>
+                            <td><div class="vocab-collo">Collocation: zhège <span class="collo-target">sījī</span></div><div class="vocab-sent">Sentence: Sījī huì shuō Yīngyǔ.</div></td>
                         </tr>
                         <tr>
                             <td class="vocab-num">#7</td><td class="vocab-pinyin-cell">huí 🔙</td><td>to return</td>
@@ -906,7 +932,7 @@
 
                 <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
                     <div class="dlg-eng">8. (I cannot speak English. I also like foreign languages, and often study a little English at home.)</div>
-                    <div class="dlg-py"><span class="speaker">Sījī:</span> Wǒ bú <span class="hl">huì</span> shuō <span class="hl">Yīngyǔ</span>. Wǒ yě xǐhuan wàiyǔ, chángcháng zài jiā xué <span class="hl">diǎnr</span> <span class="hl">Yīngyǔ</span>.</div>
+                    <div class="dlg-py"><span class="speaker">Sījī:</span> Wǒ <span class="hl">bú huì</span> shuō <span class="hl">Yīngyǔ</span>. Wǒ yě xǐhuan wàiyǔ, chángcháng zài jiā xué <span class="hl">diǎnr</span> <span class="hl">Yīngyǔ</span>.</div>
                 </div>
 
                 <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
@@ -998,19 +1024,19 @@
                         </tr>
                         <tr>
                             <td class="vocab-num">#5</td><td class="vocab-pinyin-cell">wǎnshang 🌙</td><td>evening, night</td>
-                            <td><div class="vocab-collo">Collocation: zuótiān <span class="collo-target">wǎnshang</span> / wǔ hào <span class="collo-target">wǎnshang</span></div><div class="vocab-sent">Sentence: Tā wǎnshang shíyī diǎn bàn huí xuéyuàn.</div></td>
+                            <td><div class="vocab-collo">Collocation: zuótiān <span class="collo-target">wǎnshang</span> / wǔ hào <span class="collo-target">wǎnshang</span></div><div class="vocab-sent">Sentence: Tā wǎnshang shíyī diǎn huí xuéyuàn.</div></td>
                         </tr>
                         <tr>
                             <td class="vocab-num">#6</td><td class="vocab-pinyin-cell">bàn 🌗</td><td>half</td>
                             <td>
                                 <div class="vocab-collo">Collocation: jiǔ diǎn <span class="collo-target">bàn</span> / <span class="collo-target">bàn</span> nián</div>
-                                <div class="vocab-sent">Sentence: Shíyī diǎn bàn huí xuéyuàn.</div>
+                                <div class="vocab-sent">Sentence: Wǒ shí diǎn bàn shàng Hànyǔ kè.</div>
                                 <div class="vocab-note">💡 Use for 30 minutes (8:30 = bā diǎn bàn) or half amounts (bàn ge yuè = half a month).</div>
                             </td>
                         </tr>
                         <tr>
                             <td class="vocab-num">#9</td><td class="vocab-pinyin-cell">shuìjiào 🛌</td><td>to sleep</td>
-                            <td><div class="vocab-collo">Collocation: shíyī diǎn <span class="collo-target">shuìjiào</span></div><div class="vocab-sent">Sentence: Liǎng diǎnzhōng shuìjiào.</div></td>
+                            <td><div class="vocab-collo">Collocation: shíyī diǎn <span class="collo-target">shuìjiào</span></div><div class="vocab-sent">Sentence: Wǒ liǎng diǎnzhōng shuìjiào.</div></td>
                         </tr>
                         <tr>
                             <td class="vocab-num">#10</td><td class="vocab-pinyin-cell">qǐchuáng 🛏️</td><td>to get up</td>
@@ -1018,7 +1044,7 @@
                         </tr>
                         <tr>
                             <td class="vocab-num">#4</td><td class="vocab-pinyin-cell">wánr 🎮</td><td>to have fun, play</td>
-                            <td><div class="vocab-collo">Collocation: qù péngyou jiā <span class="collo-target">wánr</span> / gēn péngyou <span class="collo-target">wánr</span></div><div class="vocab-sent">Sentence: Xiàwǔ qù péngyou jiā wánr.</div></td>
+                            <td><div class="vocab-collo">Collocation: qù péngyou jiā <span class="collo-target">wánr</span> / gēn péngyou <span class="collo-target">wánr</span></div><div class="vocab-sent">Sentence: Wǒ xiàwǔ qù péngyou jiā wánr.</div></td>
                         </tr>
                         <tr>
                             <td class="vocab-num">#3</td><td class="vocab-pinyin-cell">dōngxi 🛍️</td><td>thing, stuff</td>
@@ -1026,7 +1052,7 @@
                         </tr>
                         <tr>
                             <td class="vocab-num">#7</td><td class="vocab-pinyin-cell">xiě ✍️</td><td>to write</td>
-                            <td><div class="vocab-collo">Collocation: <span class="collo-target">xiě</span> Hànzì</div><div class="vocab-sent">Sentence: Shí'èr diǎn xiě Hànzì.</div></td>
+                            <td><div class="vocab-collo">Collocation: <span class="collo-target">xiě</span> Hànzì</div><div class="vocab-sent">Sentence: Tā wǎnshang shí'èr diǎn xiě Hànzì.</div></td>
                         </tr>
                         <tr>
                             <td class="vocab-num">#8</td><td class="vocab-pinyin-cell">Hànzì 🀄</td><td>Chinese character</td>
@@ -1124,13 +1150,14 @@
                             <td>
                                 <div class="supp-collo">Collocation: <span class="supp-collo-target">dǎdī</span> huí xuéyuàn / chángcháng <span class="supp-collo-target">dǎdī</span></div>
                                 <div class="supp-sent">Sentence: Tā qī diǎn sān kè dǎdī huí xuéyuàn.</div>
+                                <div class="vocab-note">💡 Note: Verb-Object (VO) compound structure. "dǎ" = to hail/take; "dī" = cab/taxi (borrowed from Cantonese/English 'taxi').</div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <!-- ADVERB HÁI -->
+            <!-- ADVERB HÁI (STILL / YET) -->
             <div class="card">
                 <div class="card-title">Grammar Focus: Adverb "hái" (Still / Yet) Visual Scaffolding</div>
                 
@@ -1151,7 +1178,7 @@
                         <p style="font-size: 0.95rem; color: var(--text-sub);">Indicates an expected action has <strong>NOT happened yet</strong>.</p>
                         <div style="margin-top: 10px; background: #FEE2E2; padding: 8px 12px; border-radius: 6px; border-left: 4px solid #E11D48;" class="vocab-pinyin">
                             • Tā xiànzài <span style="font-weight: bold; color: #991B1B;">hái méiyǒu</span> qǐchuáng.
-                            <br>• Wǒ <span style="font-weight: bold; color: #991B1B;">hái bù</span> huì shuō Yīngyǔ.
+                            <br>• Wǒ <span style="font-weight: bold; color: #991B1B;">hái bú</span> huì shuō Yīngyǔ.
                         </div>
                     </div>
                 </div>
@@ -1164,7 +1191,7 @@
                         <div style="font-weight: bold; color: var(--primary-color);">+</div>
                         <div class="slot" style="background-color: #DBEAFE; color: #1E40AF; border: 1.5px solid #93C5FD;"><span class="slot-label">Adverb</span>hái</div>
                         <div style="font-weight: bold; color: var(--primary-color);">+</div>
-                        <div class="slot" style="background-color: #FEE2E2; color: #991B1B; border: 1.5px solid #F87171;"><span class="slot-label">Negation</span>méi / bù</div>
+                        <div class="slot" style="background-color: #FEE2E2; color: #991B1B; border: 1.5px solid #F87171;"><span class="slot-label">Negation</span>méi / bú</div>
                         <div style="font-weight: bold; color: var(--primary-color);">+</div>
                         <div class="slot slot-verb"><span class="slot-label">Action / Verb</span>Action</div>
                     </div>
@@ -1185,7 +1212,7 @@
                         <div class="sentence-builder">
                             <div class="slot slot-subj">Wǒ</div>
                             <div class="slot" style="background-color: #DBEAFE; color: #1E40AF;">hái</div>
-                            <div class="slot" style="background-color: #FEE2E2; color: #991B1B;">bù</div>
+                            <div class="slot" style="background-color: #FEE2E2; color: #991B1B;">bú</div>
                             <div class="slot slot-verb">huì shuō Yīngyǔ.</div>
                         </div>
                         <div class="translation">(I still cannot speak English.)</div>
@@ -1253,7 +1280,7 @@
                             <td>to wait</td>
                             <td>
                                 <div class="supp-collo">Collocation: <span class="supp-collo-target">děng</span> yíxià / <span class="supp-collo-target">děng</span> lǎoshī</div>
-                                <div class="supp-sent">Sentence: Duìbuqǐ, qǐng děng yíxià.</div>
+                                <div class="supp-sent">Sentence: Duìbuqǐ, qǐng děng wǒ sān fēnzhōng.</div>
                             </td>
                         </tr>
                         <tr>
@@ -1289,7 +1316,7 @@
                             <td>note</td>
                             <td>
                                 <div class="supp-collo">Collocation: xiě <span class="supp-collo-target">biàntiáo</span> / yì zhāng <span class="supp-collo-target">biàntiáo</span></div>
-                                <div class="supp-sent">Sentence: Tā gěi péngyou xiě le yì zhāng biàntiáo.</div>
+                                <div class="supp-sent">Sentence: Tā gěi péngyou xiě yì zhāng biàntiáo.</div>
                             </td>
                         </tr>
                     </tbody>
@@ -1354,7 +1381,7 @@
                 
                 <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
                     <div class="dlg-eng">1. (Teacher Chen, Ma Dawei cannot come to class today.)</div>
-                    <div class="dlg-py"><span class="speaker">Dīng Lìbō:</span> <span class="hl">Chén</span> lǎoshī, Mǎ Dàwéi jīntiān bù néng lái shàngkè.</div>
+                    <div class="dlg-py"><span class="speaker">Dīng Lìbō:</span> Chén lǎoshī, Mǎ Dàwéi jīntiān bù néng lái shàngkè.</div>
                 </div>
 
                 <div class="interactive-dlg" onclick="this.classList.toggle('revealed')">
