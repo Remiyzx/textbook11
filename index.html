@@ -99,6 +99,7 @@
             color: white;
         }
         
+        /* SELECTED TAB: SOFT LIGHT THEME BACKGROUND WITH CONTRAST TEXT */
         .nav-btn.active {
             background-color: #DBEAFE;
             color: #1E3A8A;
@@ -121,9 +122,9 @@
         .content-header h2 { color: var(--primary-color); font-size: 2.2rem; }
 
         /* CARDS & LARGE TEXT */
-        .card { background-color: var(--card-bg); border: 1.5px solid var(--border-color); border-radius: 14px; box-shadow: 0 4px 12px -1px rgba(59, 130, 246, 0.08); margin-bottom: 2rem; padding: 2.2rem; }
-        .card-title { font-size: 1.55rem; font-weight: bold; color: var(--primary-color); margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 2px dashed var(--border-color); display: flex; align-items: center; justify-content: space-between; }
-        .page-badge { background-color: #DBEAFE; color: #1E40AF; font-size: 0.9rem; padding: 4px 14px; border-radius: 12px; font-weight: bold; }
+        .card { background-color: var(--card-bg); border: 1.5px solid var(--border-color); border-radius: 12px; box-shadow: 0 4px 10px rgba(30, 58, 138, 0.05); margin-bottom: 1.8rem; padding: 2rem; width: 100%; }
+        .card-title { font-size: 1.45rem; font-weight: bold; color: var(--primary-color); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px dashed var(--border-color); display: flex; align-items: center; justify-content: space-between; }
+        .page-badge { background-color: #DBEAFE; color: #1E40AF; font-size: 0.85rem; padding: 4px 12px; border-radius: 12px; font-weight: bold; }
         .translation { display: inline; font-size: 1.05rem; color: var(--text-sub); font-weight: normal; margin-left: 8px; font-family: 'Helvetica Neue', Arial, sans-serif; }
 
         /* HERO TITLE SECTION */
@@ -153,7 +154,7 @@
             margin-bottom: 1.5rem;
         }
         .title-word-chip { background: #FFFFFF; border: 2px solid #BFDBFE; border-radius: 12px; padding: 1rem 0.8rem; text-align: center; }
-        .title-word-py { font-family: var(--pinyin-font); font-size: 1.45rem; font-weight: bold; color: var(--primary-color); }
+        .title-word-py { font-family: var(--pinyin-font); font-size: 1.4rem; font-weight: bold; color: var(--primary-color); }
         .title-word-role { font-size: 0.82rem; color: #1D4ED8; font-weight: bold; text-transform: uppercase; margin-top: 3px; }
         .title-word-meaning { font-size: 1.05rem; color: #475569; margin-top: 3px; }
 
@@ -194,13 +195,12 @@
             font-family: var(--pinyin-font) !important;
         }
 
-        /* CRUCIAL FIX: REMOVED width: 25% SO EXAMPLES NEVER GET SQUEEZED VERTICALLY! */
         .vocab-pinyin {
             font-weight: bold;
             color: var(--primary-color);
             font-size: 1.25rem;
             display: block;
-            width: 100%; /* FILLS THE CARD FREELY */
+            width: 100%;
         }
 
         .vocab-collo { color: var(--text-sub); margin-bottom: 4px; font-size: 1.15rem; font-weight: 400; }
@@ -256,8 +256,8 @@
         .slot-label { font-size: 0.78rem; display: block; font-weight: normal; color: #64748B; margin-bottom: 2px; text-transform: uppercase; font-family: 'Helvetica Neue', Arial, sans-serif; }
 
         /* INTERACTIVE CLICK-TO-REVEAL DIALOGUES (TEXT 1 & 2) */
-        .click-hint { background-color: #DBEAFE; color: #1E40AF; padding: 0.9rem 1.4rem; border-radius: 10px; margin-bottom: 1.8rem; font-weight: bold; display: flex; align-items: center; gap: 8px; font-size: 1.15rem; border-left: 6px solid var(--accent-color); }
-
+        .click-hint { background-color: #DBEAFE; color: #1E40AF; padding: 0.9rem 1.4rem; border-radius: 10px; margin-bottom: 1.5rem; font-weight: bold; display: flex; align-items: center; gap: 8px; font-size: 1.15rem; border-left: 6px solid var(--accent-color); }
+        
         .dlg-card {
             background-color: #FFFFFF;
             border: 2px solid var(--border-color);
@@ -331,6 +331,7 @@
             .nav-container { overflow-x: auto; }
             .main-content { padding: 1.5rem; width: 100%; }
             .title-breakdown-grid, .roadmap-grid, .takeaway-grid { grid-template-columns: 1fr; }
+            .sentence-builder { flex-direction: column; align-items: stretch; }
             .dlg-inner { flex-direction: column; gap: 6px; }
             .dlg-speaker { min-width: auto; }
         }
@@ -365,7 +366,7 @@
                 <h2>Lesson 11: Lesson Theme &amp; Title Insights</h2>
             </div>
             
-            <!-- HERO TITLE BREAKDOWN (5 INDEPENDENT CHIPS) -->
+            <!-- HERO TITLE BREAKDOWN -->
             <div class="hero-title-box">
                 <div class="hero-title-pinyin">Wǒ huì shuō yìdiǎnr Hànyǔ.</div>
                 <div class="hero-title-eng">I can speak a little Chinese.</div>
@@ -404,15 +405,15 @@
                     
                     <!-- 5 FORMULA SLOTS STRICTLY ON ONE LINE WITHOUT WRAPPING -->
                     <div class="sentence-builder" style="margin: 12px 0;">
-                        <div class="slot slot-subj"><span class="slot-label">Subject</span>Wǒ</div>
+                        <div class="slot slot-subj"><span class="slot-label">Subject</span>Subject (Wǒ)</div>
                         <div style="font-weight: bold; color: var(--primary-color);">+</div>
-                        <div class="slot" style="background-color: #F3E8FF; color: #6B21A8; border: 1.5px solid #D8B4FE;"><span class="slot-label">Modal Verb</span>huì</div>
+                        <div class="slot" style="background-color: #F3E8FF; color: #6B21A8; border: 1.5px solid #D8B4FE;"><span class="slot-label">Modal Verb</span>Modal Verb (huì)</div>
                         <div style="font-weight: bold; color: var(--primary-color);">+</div>
-                        <div class="slot slot-verb"><span class="slot-label">Action Verb</span>shuō</div>
+                        <div class="slot slot-verb"><span class="slot-label">Action Verb</span>Action Verb (shuō)</div>
                         <div style="font-weight: bold; color: var(--primary-color);">+</div>
-                        <div class="slot" style="background-color: #FEF3C7; color: #92400E; border: 1.5px solid #FCD34D;"><span class="slot-label">Amount</span>yìdiǎnr</div>
+                        <div class="slot" style="background-color: #FEF3C7; color: #92400E; border: 1.5px solid #FCD34D;"><span class="slot-label">Indefinite Amount</span>Indefinite Amount (yìdiǎnr)</div>
                         <div style="font-weight: bold; color: var(--primary-color);">+</div>
-                        <div class="slot slot-obj"><span class="slot-label">Object</span>Hànyǔ</div>
+                        <div class="slot slot-obj"><span class="slot-label">Object</span>Object (Hànyǔ)</div>
                     </div>
                     
                     Notice that indefinite quantity modifiers indicating a small amount (<em>yìdiǎnr</em>) are placed <strong>immediately after the action verb</strong> and before the noun.
@@ -525,7 +526,7 @@
                 </table>
             </div>
 
-            <!-- CHÀ VS KÈ CALCULATION -->
+            <!-- DIRECT GRAMMAR TITLE 1: CHÀ VS KÈ CALCULATION -->
             <div class="card">
                 <div class="card-title">
                     <span>"chà" vs "kè" Calculation Logic</span>
@@ -576,7 +577,7 @@
                 </div>
             </div>
 
-            <!-- HÁI IN TIME EXPRESSIONS -->
+            <!-- DIRECT GRAMMAR TITLE 2: HÁI IN TIME EXPRESSIONS -->
             <div class="card">
                 <div class="card-title">
                     <span>"hái" in Time Expressions (Remaining Time vs Current Time)</span>
@@ -609,7 +610,7 @@
 
                     <div style="margin-top: 16px; padding: 14px 18px; background: white; border-radius: 10px; border: 1.5px solid #93C5FD; border-left: 6px solid var(--primary-color);">
                         <div style="color: var(--primary-color); font-weight: bold; font-size: 1.05rem; text-transform: uppercase;">Combined In-Context Example:</div>
-                        <div class="vocab-pinyin" style="margin-top: 6px; font-size: 1.3rem; line-height: 1.6;">
+                        <div class="vocab-pinyin" style="margin-top: 6px; font-size: 1.25rem; line-height: 1.6;">
                             Xiànzài <span class="grammar-hl">chà wǔ fēn bā diǎn</span>, nín <span class="grammar-hl" style="background:#E0E7FF; color:#3730A3;">hái yǒu wǔ fēnzhōng</span>.
                         </div>
                         <div class="translation" style="font-size: 1.1rem; display: block; margin-top: 4px; margin-left: 0;">
@@ -619,7 +620,7 @@
                 </div>
             </div>
 
-            <!-- CLOCK TIME VS DURATION -->
+            <!-- DIRECT GRAMMAR TITLE 3: CLOCK TIME VS DURATION -->
             <div class="card">
                 <div class="card-title">
                     <span>Clock Time vs Duration (diǎnzhōng vs fēnzhōng)</span>
@@ -678,7 +679,7 @@
                 </div>
             </div>
 
-            <!-- ASKING AGE APPROPRIATELY (FIXED 4-COLUMN SPACING) -->
+            <!-- DIRECT GRAMMAR TITLE 4: ASKING AGE (PREVENT OVERFLOW IN 4TH CARD) -->
             <div class="card">
                 <div class="card-title">
                     <span>Asking Age Appropriately</span>
@@ -704,6 +705,7 @@
                             <div class="vocab-pinyin" style="font-size: 1.15rem; color: var(--primary-color); margin: 6px 0;">Nǐ jīnnián duō dà?</div>
                             <div style="font-size: 0.95rem; color: var(--text-sub);">Most common &amp; natural in daily life.</div>
                         </div>
+                        <!-- NO OVERFLOW: TEXT WRAPS CLEANLY -->
                         <div style="background: white; padding: 14px 16px; border-radius: 10px; border-top: 5px solid #7C3AED; box-shadow: 0 2px 4px rgba(0,0,0,0.03);">
                             <strong style="color: #7C3AED; font-size:1.15rem;">Elderly (60+ years)</strong>
                             <div class="vocab-pinyin" style="font-size: 1.15rem; color: #7C3AED; margin: 6px 0; line-height: 1.35;">
@@ -752,6 +754,7 @@
                             <td>
                                 <div class="vocab-collo nw">Collocation: huì shuō <span class="collo-target">yìdiǎnr</span> / hē <span class="collo-target">diǎnr</span> jiǔ</div>
                                 <div class="vocab-sent nw">Sentence: Wǒ yě huì <u>yìdiǎnr</u>.</div>
+                                <!-- STANDOUT COLOR HIGHLIGHT FOR YIDIAR NOTE -->
                                 <div style="color: #92400E; background: #FEF3C7; border: 1.5px solid #FCD34D; border-left: 5px solid #F59E0B; padding: 6px 12px; border-radius: 6px; font-weight: bold; margin-top: 8px; font-size: 0.95rem;">
                                     💡 Verb + (yì)diǎnr + Object. An indefinite measure word expressing a small amount.
                                 </div>
@@ -874,7 +877,7 @@
                 </table>
             </div>
 
-            <!-- MODAL VERBS USAGE MATRIX -->
+            <!-- DIRECT GRAMMAR TITLE 5: USAGE MATRIX FOR MODAL VERBS -->
             <div class="card">
                 <div class="card-title">
                     <span>Usage Matrix for Modal Verbs: "kěyǐ", "huì", and "néng"</span>
@@ -940,7 +943,7 @@
                 </div>
             </div>
 
-            <!-- VERB DAO & LOCATION VERBS -->
+            <!-- DIRECT GRAMMAR TITLE 6: VERB DAO & LOCATION VERBS -->
             <div class="card">
                 <div class="card-title">
                     <span>Verb "dào" &amp; Common Location Verbs</span>
@@ -971,7 +974,6 @@
                 <div class="rule-box" style="margin-top: 1.2rem;">
                     <strong style="font-size: 1.2rem; color: var(--primary-color);">2. Summary of Common Location Verbs (Color Coded):</strong>
                     
-                    <!-- PERFECT 5-COLUMN GRID WITH VERTICAL STACKING -->
                     <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 14px;">
                         <div style="background: white; padding: 14px 16px; border-radius: 10px; border-left: 5px solid #2563EB; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
                             <div style="margin-bottom: 6px;"><span style="background:#DBEAFE; color:#1E40AF; padding:2px 8px; border-radius:4px; font-weight:bold; font-family:var(--pinyin-font);">zài</span> + place</div>
@@ -1002,7 +1004,7 @@
                 </div>
             </div>
 
-            <!-- RESPONDING TO COMPLIMENTS -->
+            <!-- DIRECT GRAMMAR TITLE 7: RESPONDING TO COMPLIMENTS -->
             <div class="card">
                 <div class="card-title">
                     <span>Responding to Compliments</span>
@@ -1041,7 +1043,6 @@
                 <h2>Text 1: Asking the Time (Pg 174–175)</h2>
             </div>
 
-            <!-- COMMUNICATIVE FOCUS CALLOUT FOR TEXT 1 -->
             <div class="comm-focus-card">
                 <div class="comm-focus-title">🎯 Communicative Focus</div>
                 <div class="comm-focus-desc">
@@ -1054,7 +1055,6 @@
                 🖱️ Interactive Mode: Click on the dialogue card to reveal the Pinyin text!
             </div>
 
-            <!-- TEXT 1 DIALOGUE CARDS MATCHING SCREENSHOT EXACTLY -->
             <div class="dlg-card" onclick="this.classList.toggle('revealed')">
                 <div class="dlg-inner">
                     <div class="dlg-speaker">1. Lín Nà:</div>
@@ -1387,7 +1387,7 @@
                             <td class="supp-pinyin-cell">xiàkè 🔔</td>
                             <td>to dismiss class</td>
                             <td>
-                                <div class="supp-collo nw">Collocation: shíyī diǎn <span class="supp-collo-target">xiàkè</span> / <span class="supp-collo-target">xiàkè</span> yǐhòu</div>
+                                <div class="supp-collo nw">Collocation: shíyī diǎn <span class="supp-collo-target">xiàkè</span> / shénme shíhou <span class="supp-collo-target">xiàkè</span></div>
                                 <div class="supp-sent nw">Sentence: Wǒmen shíyī diǎn wǔshí fēn <u>xiàkè</u>.</div>
                             </td>
                         </tr>
@@ -1424,7 +1424,7 @@
                             <td>to sing (a song)</td>
                             <td>
                                 <div class="supp-collo nw">Collocation: chángcháng <span class="supp-collo-target">chànggē</span> / <span class="supp-collo-target">chàng</span> Zhōngguó gē</div>
-                                <div class="supp-sent nw">Sentence: Tā <u>chànggē</u> chàng de hěn hǎo.</div>
+                                <div class="supp-sent nw">Sentence: Tā xǐhuan gēn péngyou qù <u>chànggē</u>.</div>
                             </td>
                         </tr>
                         <tr>
@@ -1468,7 +1468,7 @@
                 </table>
             </div>
 
-            <!-- ADVERBS OF DEGREE ORDER (5 EQUAL COLUMNS, COMFORTABLY SPACED) -->
+            <!-- ADVERBS OF DEGREE ORDER -->
             <div class="card">
                 <div class="card-title">
                     <span>Adverbs of Degree Order</span>
@@ -1609,7 +1609,7 @@
                 </table>
             </div>
 
-            <!-- DOUBLE OBJECTS VERBS -->
+            <!-- DIRECT GRAMMAR TITLE 13: DOUBLE OBJECTS VERBS -->
             <div class="card">
                 <div class="card-title">
                     <span>Double Objects Verbs ("jiāo" &amp; "wèn")</span>
@@ -1751,7 +1751,7 @@
             </div>
         </section>
 
-        <!-- TAB 8: WRAP-UP (CORE GRAMMAR SUMMARY) -->
+        <!-- TAB 8: WRAP-UP (CORE GRAMMAR SUMMARY - VISUAL CARDS, NO HANZI) -->
         <section id="nav-8" class="tab-content">
             <div class="content-header">
                 <h2>Wrap-up</h2>
@@ -1808,7 +1808,7 @@
                 </div>
             </div>
 
-            <!-- CORE GRAMMAR SUMMARY -->
+            <!-- HIGHLY VISUAL CORE GRAMMAR SUMMARY (NO HANZI, PUNCHY ESSENCE) -->
             <div class="card">
                 <div class="card-title">🌟 Core Grammar Summary</div>
 
